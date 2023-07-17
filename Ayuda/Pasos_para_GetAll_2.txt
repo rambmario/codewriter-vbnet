@@ -1,0 +1,25 @@
+PASOS PARA HACER LAS CONSULTAS DE LOS ABMS
+------------------------------------------
+
+1-crear un nuevo sp con el nombre 'GetAll_2': 
+	
+  hacer un 'DROP and CREATE to' (la base es el getall),
+
+2-crear un nuevo sp con el nombre 'Find_2': 
+
+  hacer un 'DROP and CREATE to' (la base es el find) , 
+  el select es el mismo que se usa en el GetAll_2 manteniendo el filtro
+
+3-agregar en la clase correspondiente los nuevos sub: 
+
+  'Sub GetAll_2' y 'Sub Find_2'
+
+4-hacer la prueba unitaria de cada sub nuevo que agreguemos a la clase: en este caso es
+
+  Public Sub GetAll_2NOMBRETABLATest() : este se completa con lo del GetAllTest
+  Public Sub Find_2NOMBRETABLATest() : este se completa con lo del FindTest
+
+5-reemplazar en el codigo del abm en refrescargrilla() el getall por el getall_2 y
+  en el boton buscar el find por el find_2
+
+

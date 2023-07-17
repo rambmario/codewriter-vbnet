@@ -1,0 +1,133 @@
+D:\VBNET\Cooperator\Cooperator\bin\Release\Cooperator.exe
+D:\VBNET\Cooperator\Cooperator\bin\Release\Cooperator.pdb
+D:\VBNET\Cooperator\Cooperator\bin\Release\Cooperator.xml
+D:\VBNET\Cooperator\Cooperator\obj\Release\ResolveAssemblyReference.cache
+D:\VBNET\Cooperator\Cooperator\obj\Release\Cooperator.frmPrincipal.resources
+D:\VBNET\Cooperator\Cooperator\obj\Release\Cooperator.Form2.resources
+D:\VBNET\Cooperator\Cooperator\obj\Release\Cooperator.Form3.resources
+D:\VBNET\Cooperator\Cooperator\obj\Release\Cooperator.frmAyuda.resources
+D:\VBNET\Cooperator\Cooperator\obj\Release\Cooperator.Resources.resources
+D:\VBNET\Cooperator\Cooperator\obj\Release\Cooperator.vbproj.GenerateResource.Cache
+D:\VBNET\Cooperator\Cooperator\obj\Release\Cooperator.exe
+D:\VBNET\Cooperator\Cooperator\obj\Release\Cooperator.xml
+D:\VBNET\Cooperator\Cooperator\obj\Release\Cooperator.pdb
+D:\VBNET\cooperator\trunk\Cooperator\bin\Release\Cooperator.exe
+D:\VBNET\cooperator\trunk\Cooperator\bin\Release\Cooperator.pdb
+D:\VBNET\cooperator\trunk\Cooperator\bin\Release\Cooperator.xml
+D:\VBNET\cooperator\trunk\Cooperator\obj\Release\ResolveAssemblyReference.cache
+D:\VBNET\cooperator\trunk\Cooperator\obj\Release\Cooperator.frmPrincipal.resources
+D:\VBNET\cooperator\trunk\Cooperator\obj\Release\Cooperator.Form2.resources
+D:\VBNET\cooperator\trunk\Cooperator\obj\Release\Cooperator.Form3.resources
+D:\VBNET\cooperator\trunk\Cooperator\obj\Release\Cooperator.frmAyuda.resources
+D:\VBNET\cooperator\trunk\Cooperator\obj\Release\Cooperator.Resources.resources
+D:\VBNET\cooperator\trunk\Cooperator\obj\Release\Cooperator.vbproj.GenerateResource.Cache
+D:\VBNET\cooperator\trunk\Cooperator\obj\Release\Cooperator.exe
+D:\VBNET\cooperator\trunk\Cooperator\obj\Release\Cooperator.xml
+D:\VBNET\cooperator\trunk\Cooperator\obj\Release\Cooperator.pdb
+H:\VBNet\cooperator\trunk\Cooperator\bin\Release\Cooperator.exe
+H:\VBNet\cooperator\trunk\Cooperator\bin\Release\Cooperator.pdb
+H:\VBNet\cooperator\trunk\Cooperator\bin\Release\Cooperator.xml
+H:\VBNet\cooperator\trunk\Cooperator\obj\Release\ResolveAssemblyReference.cache
+H:\VBNet\cooperator\trunk\Cooperator\obj\Release\Cooperator.frmPrincipal.resources
+H:\VBNet\cooperator\trunk\Cooperator\obj\Release\Cooperator.Form2.resources
+H:\VBNet\cooperator\trunk\Cooperator\obj\Release\Cooperator.Form3.resources
+H:\VBNet\cooperator\trunk\Cooperator\obj\Release\Cooperator.frmAyuda.resources
+H:\VBNet\cooperator\trunk\Cooperator\obj\Release\Cooperator.Resources.resources
+H:\VBNet\cooperator\trunk\Cooperator\obj\Release\Cooperator.vbproj.GenerateResource.Cache
+H:\VBNet\cooperator\trunk\Cooperator\obj\Release\Cooperator.exe
+H:\VBNet\cooperator\trunk\Cooperator\obj\Release\Cooperator.xml
+H:\VBNet\cooperator\trunk\Cooperator\obj\Release\Cooperator.pdb
+V:\VBNet\Cooperator\trunk\Cooperator\bin\Release\Cooperator.exe
+V:\VBNet\Cooperator\trunk\Cooperator\bin\Release\Cooperator.pdb
+V:\VBNet\Cooperator\trunk\Cooperator\bin\Release\Cooperator.xml
+V:\VBNet\Cooperator\trunk\Cooperator\obj\Release\ResolveAssemblyReference.cache
+V:\VBNet\Cooperator\trunk\Cooperator\obj\Release\Cooperator.frmPrincipal.resources
+V:\VBNet\Cooperator\trunk\Cooperator\obj\Release\Cooperator.Form2.resources
+V:\VBNet\Cooperator\trunk\Cooperator\obj\Release\Cooperator.Form3.resources
+V:\VBNet\Cooperator\trunk\Cooperator\obj\Release\Cooperator.frmAyuda.resources
+V:\VBNet\Cooperator\trunk\Cooperator\obj\Release\Cooperator.frmCodigo.resources
+V:\VBNet\Cooperator\trunk\Cooperator\obj\Release\Cooperator.Resources.resources
+V:\VBNet\Cooperator\trunk\Cooperator\obj\Release\Cooperator.exe
+V:\VBNet\Cooperator\trunk\Cooperator\obj\Release\Cooperator.xml
+V:\VBNet\Cooperator\trunk\Cooperator\obj\Release\Cooperator.pdb
+V:\VBNet\Cooperator\trunk\Cooperator\obj\Release\Cooperator.frmAbmGeneral.resources
+V:\VBNet\Cooperator\trunk\Cooperator\obj\Release\Cooperator.frmDetalleModelo1.resources
+V:\VBNet\Cooperator\trunk\Cooperator\obj\Release\Cooperator.frmDetalleModelo2.resources
+V:\VBNet\Cooperator\trunk\Cooperator\obj\Release\Cooperator.frmDetalleModelo3.resources
+V:\VBNet\Cooperator\trunk\Cooperator\obj\Release\ResGen.read.1.tlog
+V:\VBNet\Cooperator\trunk\Cooperator\obj\Release\ResGen.write.1.tlog
+H:\VBNet\Cooperator\Cooperator\bin\Release\Cooperator.exe
+H:\VBNet\Cooperator\Cooperator\bin\Release\Cooperator.pdb
+H:\VBNet\Cooperator\Cooperator\bin\Release\Cooperator.xml
+H:\VBNet\Cooperator\Cooperator\obj\Release\Cooperator.frmPrincipal.resources
+H:\VBNet\Cooperator\Cooperator\obj\Release\Cooperator.Form2.resources
+H:\VBNet\Cooperator\Cooperator\obj\Release\Cooperator.Form3.resources
+H:\VBNet\Cooperator\Cooperator\obj\Release\Cooperator.frmAbmGeneral.resources
+H:\VBNet\Cooperator\Cooperator\obj\Release\Cooperator.frmAyuda.resources
+H:\VBNet\Cooperator\Cooperator\obj\Release\Cooperator.frmCodigo.resources
+H:\VBNet\Cooperator\Cooperator\obj\Release\Cooperator.frmDetalleModelo1.resources
+H:\VBNet\Cooperator\Cooperator\obj\Release\Cooperator.frmDetalleModelo2.resources
+H:\VBNet\Cooperator\Cooperator\obj\Release\Cooperator.frmDetalleModelo3.resources
+H:\VBNet\Cooperator\Cooperator\obj\Release\Cooperator.Resources.resources
+H:\VBNet\Cooperator\Cooperator\obj\Release\Cooperator.vbproj.GenerateResource.Cache
+H:\VBNet\Cooperator\Cooperator\obj\Release\Cooperator.exe
+H:\VBNet\Cooperator\Cooperator\obj\Release\Cooperator.xml
+H:\VBNet\Cooperator\Cooperator\obj\Release\Cooperator.pdb
+H:\VBNet\Cooperator\Cooperator\bin\Release\Cooperator.exe.config
+H:\Google Drive\VBNet\Cooperator\Cooperator\bin\Release\Cooperator.exe.config
+H:\Google Drive\VBNet\Cooperator\Cooperator\bin\Release\Cooperator.exe
+H:\Google Drive\VBNet\Cooperator\Cooperator\bin\Release\Cooperator.pdb
+H:\Google Drive\VBNet\Cooperator\Cooperator\bin\Release\Cooperator.xml
+H:\Google Drive\VBNet\Cooperator\Cooperator\obj\Release\Cooperator.frmPrincipal.resources
+H:\Google Drive\VBNet\Cooperator\Cooperator\obj\Release\Cooperator.Form2.resources
+H:\Google Drive\VBNet\Cooperator\Cooperator\obj\Release\Cooperator.Form3.resources
+H:\Google Drive\VBNet\Cooperator\Cooperator\obj\Release\Cooperator.frmAbmGeneral.resources
+H:\Google Drive\VBNet\Cooperator\Cooperator\obj\Release\Cooperator.frmAyuda.resources
+H:\Google Drive\VBNet\Cooperator\Cooperator\obj\Release\Cooperator.frmCodigo.resources
+H:\Google Drive\VBNet\Cooperator\Cooperator\obj\Release\Cooperator.frmDetalleModelo1.resources
+H:\Google Drive\VBNet\Cooperator\Cooperator\obj\Release\Cooperator.frmDetalleModelo2.resources
+H:\Google Drive\VBNet\Cooperator\Cooperator\obj\Release\Cooperator.frmDetalleModelo3.resources
+H:\Google Drive\VBNet\Cooperator\Cooperator\obj\Release\Cooperator.Resources.resources
+H:\Google Drive\VBNet\Cooperator\Cooperator\obj\Release\Cooperator.vbproj.GenerateResource.Cache
+H:\Google Drive\VBNet\Cooperator\Cooperator\obj\Release\Cooperator.exe
+H:\Google Drive\VBNet\Cooperator\Cooperator\obj\Release\Cooperator.xml
+H:\Google Drive\VBNet\Cooperator\Cooperator\obj\Release\Cooperator.pdb
+H:\Google Drive 2\VBNet\Cooperator\Cooperator\bin\Release\Cooperator.exe.config
+H:\Google Drive 2\VBNet\Cooperator\Cooperator\bin\Release\Cooperator.exe
+H:\Google Drive 2\VBNet\Cooperator\Cooperator\bin\Release\Cooperator.pdb
+H:\Google Drive 2\VBNet\Cooperator\Cooperator\bin\Release\Cooperator.xml
+H:\Google Drive 2\VBNet\Cooperator\Cooperator\obj\Release\Cooperator.frmPrincipal.resources
+H:\Google Drive 2\VBNet\Cooperator\Cooperator\obj\Release\Cooperator.Form2.resources
+H:\Google Drive 2\VBNet\Cooperator\Cooperator\obj\Release\Cooperator.Form3.resources
+H:\Google Drive 2\VBNet\Cooperator\Cooperator\obj\Release\Cooperator.frmAbmGeneral.resources
+H:\Google Drive 2\VBNet\Cooperator\Cooperator\obj\Release\Cooperator.frmAyuda.resources
+H:\Google Drive 2\VBNet\Cooperator\Cooperator\obj\Release\Cooperator.frmCodigo.resources
+H:\Google Drive 2\VBNet\Cooperator\Cooperator\obj\Release\Cooperator.frmDetalleModelo1.resources
+H:\Google Drive 2\VBNet\Cooperator\Cooperator\obj\Release\Cooperator.frmDetalleModelo2.resources
+H:\Google Drive 2\VBNet\Cooperator\Cooperator\obj\Release\Cooperator.frmDetalleModelo3.resources
+H:\Google Drive 2\VBNet\Cooperator\Cooperator\obj\Release\Cooperator.Resources.resources
+H:\Google Drive 2\VBNet\Cooperator\Cooperator\obj\Release\Cooperator.vbproj.GenerateResource.Cache
+H:\Google Drive 2\VBNet\Cooperator\Cooperator\obj\Release\Cooperator.exe
+H:\Google Drive 2\VBNet\Cooperator\Cooperator\obj\Release\Cooperator.xml
+H:\Google Drive 2\VBNet\Cooperator\Cooperator\obj\Release\Cooperator.pdb
+C:\Users\mario\OneDrive\_proyectos\Cooperator\Cooperator\bin\Release\Cooperator.exe.config
+C:\Users\mario\OneDrive\_proyectos\Cooperator\Cooperator\bin\Release\Cooperator.exe
+C:\Users\mario\OneDrive\_proyectos\Cooperator\Cooperator\bin\Release\Cooperator.pdb
+C:\Users\mario\OneDrive\_proyectos\Cooperator\Cooperator\bin\Release\Cooperator.xml
+C:\Users\mario\OneDrive\_proyectos\Cooperator\Cooperator\obj\Release\Cooperator.vbproj.AssemblyReference.cache
+C:\Users\mario\OneDrive\_proyectos\Cooperator\Cooperator\obj\Release\Cooperator.vbproj.SuggestedBindingRedirects.cache
+C:\Users\mario\OneDrive\_proyectos\Cooperator\Cooperator\obj\Release\Cooperator.frmPrincipal.resources
+C:\Users\mario\OneDrive\_proyectos\Cooperator\Cooperator\obj\Release\Cooperator.Form2.resources
+C:\Users\mario\OneDrive\_proyectos\Cooperator\Cooperator\obj\Release\Cooperator.Form3.resources
+C:\Users\mario\OneDrive\_proyectos\Cooperator\Cooperator\obj\Release\Cooperator.frmAbmGeneral.resources
+C:\Users\mario\OneDrive\_proyectos\Cooperator\Cooperator\obj\Release\Cooperator.frmAyuda.resources
+C:\Users\mario\OneDrive\_proyectos\Cooperator\Cooperator\obj\Release\Cooperator.frmCodigo.resources
+C:\Users\mario\OneDrive\_proyectos\Cooperator\Cooperator\obj\Release\Cooperator.frmDetalleModelo1.resources
+C:\Users\mario\OneDrive\_proyectos\Cooperator\Cooperator\obj\Release\Cooperator.frmDetalleModelo2.resources
+C:\Users\mario\OneDrive\_proyectos\Cooperator\Cooperator\obj\Release\Cooperator.frmDetalleModelo3.resources
+C:\Users\mario\OneDrive\_proyectos\Cooperator\Cooperator\obj\Release\Cooperator.Resources.resources
+C:\Users\mario\OneDrive\_proyectos\Cooperator\Cooperator\obj\Release\Cooperator.vbproj.GenerateResource.cache
+C:\Users\mario\OneDrive\_proyectos\Cooperator\Cooperator\obj\Release\Cooperator.vbproj.CoreCompileInputs.cache
+C:\Users\mario\OneDrive\_proyectos\Cooperator\Cooperator\obj\Release\Cooperator.exe
+C:\Users\mario\OneDrive\_proyectos\Cooperator\Cooperator\obj\Release\Cooperator.xml
+C:\Users\mario\OneDrive\_proyectos\Cooperator\Cooperator\obj\Release\Cooperator.pdb

@@ -1,0 +1,2745 @@
+
+INSERT INTO [dbo].[Acopiadores]
+(
+           [nombre_acopiador],
+           [cuit],
+           [id_provincia],
+           [id_localidad],
+           [id_calle],
+           [nro_calle],
+           [telefono],
+           [email],
+           [pagina_web]
+)
+VALUES
+(
+           'NINGUNO',
+           'NINGUNO',
+           1,
+           1,
+           1,
+           'NINGUNO',
+           'NINGUNO',
+           'NINGUNO',
+           'NINGUNO'
+)
+GO
+
+
+INSERT INTO [dbo].[Acoplado]
+(
+           [patente_acoplado],
+           [tara_acoplado]
+)
+VALUES
+(
+           'NINGUNO',
+            0 
+)
+GO
+
+
+INSERT INTO [dbo].[Ajustes_stock_cultivos]
+(
+           [id_cultivo],
+           [id_almacen],
+           [id_campo],
+           [id_lote],
+           [cantidad],
+           [fecha],
+           [id_unidad],
+           [id_subalmacen],
+           [id_grupo_socios]
+)
+VALUES
+(
+           1,
+           1,
+           1,
+           1,
+           0,
+           '01-01-2000',
+           1,
+           1,
+            1 
+)
+GO
+
+
+INSERT INTO [dbo].[Ajustes_stock_insumos]
+(
+           [id_insumo],
+           [id_almacen],
+           [cantidad],
+           [precio],
+           [fecha],
+           [id_unidad],
+           [id_grupo_socios]
+)
+VALUES
+(
+           1,
+           1,
+           0,
+           0,
+           '01-01-2000',
+           1,
+            1 
+)
+GO
+
+
+INSERT INTO [dbo].[Alicuotas]
+(
+           [alicuota]
+)
+VALUES
+(
+            0 
+)
+GO
+
+
+INSERT INTO [dbo].[Almacenes]
+(
+           [nombre_almacen],
+           [id_tipo_almacen],
+           [id_campo],
+           [direccion],
+           [id_localidad]
+)
+VALUES
+(
+           'NINGUNO',
+           1,
+           1,
+           'NINGUNO',
+            1 
+)
+GO
+
+
+INSERT INTO [dbo].[Asignacion_empleado]
+(
+           [id_empresa],
+           [id_empleado],
+           [sueldo_empleado],
+           [fecha_asignacion_empleado],
+           [detalle_asignacion_empleado]
+)
+VALUES
+(
+           1,
+           1,
+           0,
+           '01-01-2000',
+           'NINGUNO'
+)
+GO
+
+
+INSERT INTO [dbo].[Bancos]
+(
+           [nombre_banco],
+           [cuit_banco],
+           [id_calle],
+           [nro_calle],
+           [id_provincia],
+           [id_localidad],
+           [telefono],
+           [email],
+           [pagina_web]
+)
+VALUES
+(
+           'NINGUNO',
+           'NINGUNO',
+           1,
+           'NINGUNO',
+           1,
+           1,
+           'NINGUNO',
+           'NINGUNO',
+           'NINGUNO'
+)
+GO
+
+
+INSERT INTO [dbo].[Calles]
+(
+           [nombre_calle]
+)
+VALUES
+(
+           'NINGUNO'
+)
+GO
+
+
+INSERT INTO [dbo].[Camiones]
+(
+           [patente_chasis],
+           [tara_chasis],
+           [id_marca_camion],
+           [detalles_camion],
+           [id_empresa_transporte]
+)
+VALUES
+(
+           'NINGUNO',
+           'NINGUNO',
+           1,
+           'NINGUNO',
+            1 
+)
+GO
+
+
+INSERT INTO [dbo].[Camiones_stock]
+(
+           [fecha],
+           [id_cultivo],
+           [id_almacen],
+           [id_campo],
+           [id_lote],
+           [cantidad],
+           [id_camion],
+           [id_chofer],
+           [id_subalmacen],
+           [id_grupo_socios],
+           [id_humedad],
+           [numero_carta_porte]
+)
+VALUES
+(
+           '01-01-2000',
+           1,
+           1,
+           1,
+           1,
+           0,
+           1,
+           1,
+           1,
+           1,
+           1,
+           'NINGUNO'
+)
+GO
+
+
+INSERT INTO [dbo].[Campana]
+(
+           [id_grupo_socios],
+           [id_campo],
+           [id_lote],
+           [id_cultivo],
+           [superficie],
+           [fecha_inicio],
+           [fecha_fin],
+           [id_grupo_campana],
+           [fecha_siembra],
+           [densidad_cultivo],
+           [variedad_cultivo]
+)
+VALUES
+(
+           1,
+           1,
+           1,
+           1,
+           0,
+           '01-01-2000',
+           '01-01-2000',
+           1,
+           '01-01-2000',
+           'NINGUNO',
+           'NINGUNO'
+)
+GO
+
+
+INSERT INTO [dbo].[Campos]
+(
+           [nombre_campo],
+           [superficie],
+           [id_localidad],
+           [id_empresa]
+)
+VALUES
+(
+           'NINGUNO',
+           0,
+           1,
+            1 
+)
+GO
+
+
+INSERT INTO [dbo].[Carta_porte]
+(
+           [numero_carta_porte],
+           [arancel],
+           [fecha_emision],
+           [fecha_vencimiento],
+           [cau],
+           [id_remitente],
+           [id_orden1],
+           [id_orden2],
+           [id_cultivo],
+           [id_tipo_grano],
+           [contrato],
+           [calidad],
+           [id_calle],
+           [numero_calle],
+           [id_localidad],
+           [id_departamento],
+           [id_provincia],
+           [pesado_destino],
+           [bruto],
+           [tara],
+           [kg],
+           [observacion],
+           [id_corredor],
+           [id_entregador],
+           [id_cupeador],
+           [fecha_cupo],
+           [id_destinatario],
+           [destino],
+           [id_destino],
+           [id_flete],
+           [id_empresa_transporte],
+           [id_camion],
+           [id_acoplado],
+           [forma_pago],
+           [id_chofer],
+           [tarifa],
+           [km],
+           [fecha_arribo],
+           [fecha_descarga],
+           [numero_turno],
+           [peso_bruto_descarga],
+           [peso_tara_descarga],
+           [observacion_descarga]
+)
+VALUES
+(
+           'NINGUNO',
+           0,
+           '01-01-2000',
+           '01-01-2000',
+           'NINGUNO',
+           1,
+           1,
+           1,
+           1,
+           1,
+           'NINGUNO',
+           0,
+           1,
+           'NINGUNO',
+           1,
+           1,
+           1,
+           0,
+           0,
+           0,
+           0,
+           'NINGUNO',
+           1,
+           1,
+           1,
+           '01-01-2000',
+           1,
+           0,
+           1,
+           1,
+           1,
+           1,
+           1,
+           0,
+           1,
+           0,
+           0,
+           '01-01-2000',
+           '01-01-2000',
+           'NINGUNO',
+           0,
+           0,
+           'NINGUNO'
+)
+GO
+
+
+INSERT INTO [dbo].[Certificado_deposito]
+(
+           [numero_certificado_deposito],
+           [id_depositario],
+           [id_depositante],
+           [kg_bruto],
+           [kg_neto],
+           [merma_zarandeo],
+           [tarifa_zarandeo],
+           [merma_secado],
+           [tarifa_secado],
+           [fecha_certificado_deposito]
+)
+VALUES
+(
+           'NINGUNO',
+           1,
+           1,
+           0,
+           0,
+           0,
+           0,
+           0,
+           0,
+           '01-01-2000'
+)
+GO
+
+
+INSERT INTO [dbo].[Cheque_temporal]
+(
+           [id_cheque],
+           [tipo_cheque],
+           [control],
+           [numero_cheque],
+           [importe_cheque],
+           [detalle],
+           [fecha_1],
+           [fecha_2],
+           [fecha_3],
+           [nombre_banco],
+           [cliente_proveedor],
+           [vendido]
+)
+VALUES
+(
+           1,
+           'NINGUNO',
+           0,
+           'NINGUNO',
+           0,
+           'NINGUNO',
+           '01-01-2000',
+           '01-01-2000',
+           '01-01-2000',
+           'NINGUNO',
+           'NINGUNO',
+            0 
+)
+GO
+
+
+INSERT INTO [dbo].[Chequeras]
+(
+           [numero_cheque],
+           [tipo_cheque],
+           [id_banco],
+           [id_cuenta],
+           [primer_cheque]
+)
+VALUES
+(
+           'NINGUNO',
+           0,
+           1,
+           1,
+           'NINGUNO'
+)
+GO
+
+
+INSERT INTO [dbo].[Cheques_librados]
+(
+           [detalle],
+           [id_proveedor],
+           [banco_cheque],
+           [numero_cheque],
+           [fecha_librado],
+           [fecha_pago],
+           [importe],
+           [id_empresa],
+           [periodo],
+           [id_cuenta],
+           [id_chequera],
+           [control]
+)
+VALUES
+(
+           'NINGUNO',
+           1,
+           1,
+           'NINGUNO',
+           '01-01-2000',
+           '01-01-2000',
+           0,
+           1,
+           '01-01-2000',
+           1,
+           1,
+            0 
+)
+GO
+
+
+INSERT INTO [dbo].[Cheques_recibidos]
+(
+           [detalle],
+           [id_cliente],
+           [banco_cheque],
+           [numero_cheque],
+           [fecha_recibido],
+           [fecha_acreditacion],
+           [banco_deposito],
+           [id_cuenta],
+           [importe],
+           [id_provincia],
+           [id_localidad],
+           [id_empresa],
+           [periodo],
+           [vendido],
+           [fecha_venta],
+           [control]
+)
+VALUES
+(
+           'NINGUNO',
+           1,
+           1,
+           'NINGUNO',
+           '01-01-2000',
+           '01-01-2000',
+           1,
+           1,
+           0,
+           1,
+           1,
+           1,
+           '01-01-2000',
+           0,
+           '01-01-2000',
+            0 
+)
+GO
+
+
+INSERT INTO [dbo].[Choferes]
+(
+           [nombre_chofer],
+           [apellido_chofer],
+           [cuil_chofer],
+           [id_calle],
+           [nro_calle],
+           [id_provincia],
+           [id_localidad],
+           [telefono],
+           [licencia]
+)
+VALUES
+(
+           'NINGUNO',
+           'NINGUNO',
+           'NINGUNO',
+           1,
+           'NINGUNO',
+           1,
+           1,
+           'NINGUNO',
+           'NINGUNO'
+)
+GO
+
+
+INSERT INTO [dbo].[Clientes]
+(
+           [nombre_cliente],
+           [contacto],
+           [cuit_cliente],
+           [id_calle],
+           [nro_calle],
+           [id_localidad],
+           [id_provincia],
+           [telefono],
+           [pagina_web],
+           [email],
+           [id_situacion_iva],
+           [ingreso_bruto_cliente]
+)
+VALUES
+(
+           'NINGUNO',
+           'NINGUNO',
+           'NINGUNO',
+           1,
+           'NINGUNO',
+           1,
+           1,
+           'NINGUNO',
+           'NINGUNO',
+           'NINGUNO',
+           1,
+           'NINGUNO'
+)
+GO
+
+
+INSERT INTO [dbo].[Compra_venta]
+(
+           [numero_compra_venta],
+           [fecha_compra_venta],
+           [id_comprador],
+           [id_vendedor],
+           [id_certificado_deposito],
+           [precio_referencia],
+           [flete],
+           [precio_operacion],
+           [peso_neto],
+           [importe_bruto],
+           [iva],
+           [retencion],
+           [importe_neto]
+)
+VALUES
+(
+           'NINGUNO',
+           '01-01-2000',
+           1,
+           1,
+           1,
+           0,
+           0,
+           0,
+           0,
+           0,
+           0,
+           0,
+            0 
+)
+GO
+
+
+INSERT INTO [dbo].[Comprobantes]
+(
+           [nombre_comprobante],
+           [id_tipo_comprobante]
+)
+VALUES
+(
+           'NINGUNO',
+            1 
+)
+GO
+
+
+INSERT INTO [dbo].[Condicion]
+(
+           [condicion]
+)
+VALUES
+(
+           'NINGUNO'
+)
+GO
+
+
+INSERT INTO [dbo].[Corredor]
+(
+           [cuit_corredor],
+           [nombre_corredor]
+)
+VALUES
+(
+           'NINGUNO',
+           'NINGUNO'
+)
+GO
+
+
+INSERT INTO [dbo].[Cosechas_camiones_stock]
+(
+           [fecha],
+           [id_cultivo],
+           [id_campo],
+           [id_lote],
+           [cantidad],
+           [id_camion],
+           [id_chofer],
+           [id_grupo_socios],
+           [id_campana],
+           [id_humedad],
+           [numero_carta_porte]
+)
+VALUES
+(
+           '01-01-2000',
+           1,
+           1,
+           1,
+           0,
+           1,
+           1,
+           1,
+           1,
+           1,
+           'NINGUNO'
+)
+GO
+
+
+INSERT INTO [dbo].[Cosechas_stock]
+(
+           [fecha],
+           [id_cultivo],
+           [id_almacen],
+           [cantidad],
+           [id_campo],
+           [id_lote],
+           [id_subalmacen],
+           [id_grupo_socios],
+           [id_campana],
+           [id_humedad]
+)
+VALUES
+(
+           '01-01-2000',
+           1,
+           1,
+           0,
+           1,
+           1,
+           1,
+           1,
+           1,
+            1 
+)
+GO
+
+
+INSERT INTO [dbo].[Creditos]
+(
+           [detalle],
+           [fecha],
+           [comprobante],
+           [importe],
+           [id_cuenta],
+           [id_banco],
+           [id_empresa],
+           [periodo],
+           [control]
+)
+VALUES
+(
+           'NINGUNO',
+           '01-01-2000',
+           'NINGUNO',
+           0,
+           1,
+           1,
+           1,
+           '01-01-2000',
+            0 
+)
+GO
+
+
+INSERT INTO [dbo].[Cuentas]
+(
+           [numero],
+           [id_empresa],
+           [id_banco]
+)
+VALUES
+(
+           'NINGUNO',
+           1,
+            1 
+)
+GO
+
+
+INSERT INTO [dbo].[Cuerpo_factura]
+(
+           [id_factura],
+           [id_item],
+           [cantidad_item],
+           [precio_item],
+           [descripcion_item]
+)
+VALUES
+(
+           1,
+           1,
+           0,
+           0,
+           'NINGUNO'
+)
+GO
+
+
+INSERT INTO [dbo].[Cultivos]
+(
+           [nombre_cultivo],
+           [id_tipo_grano],
+           [id_unidad],
+           [humedad_base]
+)
+VALUES
+(
+           'NINGUNO',
+           1,
+           1,
+            0 
+)
+GO
+
+
+INSERT INTO [dbo].[Cupeador]
+(
+           [nombre_cupeador],
+           [cupo]
+)
+VALUES
+(
+           'NINGUNO',
+           'NINGUNO'
+)
+GO
+
+
+INSERT INTO [dbo].[Debitos]
+(
+           [detalle],
+           [fecha],
+           [comprobante],
+           [importe],
+           [id_cuenta],
+           [id_banco],
+           [id_empresa],
+           [periodo],
+           [control]
+)
+VALUES
+(
+           'NINGUNO',
+           '01-01-2000',
+           'NINGUNO',
+           0,
+           1,
+           1,
+           1,
+           '01-01-2000',
+            0 
+)
+GO
+
+
+INSERT INTO [dbo].[Defoliacion]
+(
+           [nombre_defoliacion]
+)
+VALUES
+(
+            0 
+)
+GO
+
+
+INSERT INTO [dbo].[Departamento]
+(
+           [nombre_departamento]
+)
+VALUES
+(
+           'NINGUNO'
+)
+GO
+
+
+INSERT INTO [dbo].[Depositos_efectivo]
+(
+           [detalle],
+           [fecha],
+           [comprobante],
+           [importe],
+           [id_cuenta],
+           [id_banco],
+           [id_empresa],
+           [periodo],
+           [control]
+)
+VALUES
+(
+           'NINGUNO',
+           '01-01-2000',
+           'NINGUNO',
+           0,
+           1,
+           1,
+           1,
+           '01-01-2000',
+            0 
+)
+GO
+
+
+INSERT INTO [dbo].[Destino]
+(
+           [descripcion_destino],
+           [id_calle],
+           [numero_calle],
+           [id_localidad],
+           [id_departamento],
+           [id_provincia],
+           [id_pais],
+           [id_remitente]
+)
+VALUES
+(
+           'NINGUNO',
+           1,
+           'NINGUNO',
+           1,
+           1,
+           1,
+           1,
+            1 
+)
+GO
+
+
+INSERT INTO [dbo].[Detalle_campana]
+(
+           [id_campana],
+           [id_empresa],
+           [porcentaje]
+)
+VALUES
+(
+           1,
+           1,
+            0 
+)
+GO
+
+
+INSERT INTO [dbo].[Devolucion_stock_insumos]
+(
+           [fecha],
+           [id_insumo],
+           [id_almacen],
+           [id_campana],
+           [cantidad],
+           [id_unidad],
+           [precio]
+)
+VALUES
+(
+           '01-01-2000',
+           1,
+           1,
+           1,
+           0,
+           1,
+            0 
+)
+GO
+
+
+INSERT INTO [dbo].[Egreso_insumo]
+(
+           [fecha_egreso_insumo],
+           [id_grupo_socios],
+           [id_insumo],
+           [id_almacen],
+           [cantidad_egreso_insumo],
+           [id_empresa],
+           [detalle_egreso_insumo],
+           [precio_egreso_insumo]
+)
+VALUES
+(
+           '01-01-2000',
+           1,
+           1,
+           1,
+           0,
+           1,
+           'NINGUNO',
+            0 
+)
+GO
+
+
+INSERT INTO [dbo].[Egresos_stock]
+(
+           [fecha],
+           [id_insumo],
+           [id_almacen],
+           [id_campo],
+           [id_lote],
+           [cantidad],
+           [id_unidad]
+)
+VALUES
+(
+           '01-01-2000',
+           1,
+           1,
+           1,
+           1,
+           0,
+            1 
+)
+GO
+
+
+INSERT INTO [dbo].[Empleados]
+(
+           [nombre_empleado],
+           [apellido_empleado],
+           [cuil_empleado],
+           [id_provincia],
+           [id_localidad],
+           [id_calle],
+           [nro_calle],
+           [telefono]
+)
+VALUES
+(
+           'NINGUNO',
+           'NINGUNO',
+           'NINGUNO',
+           1,
+           1,
+           1,
+           'NINGUNO',
+           'NINGUNO'
+)
+GO
+
+
+INSERT INTO [dbo].[Empresas]
+(
+           [nombre_empresa],
+           [contacto],
+           [cuit_empresa],
+           [id_calle],
+           [nro_calle],
+           [id_provincia],
+           [id_localidad],
+           [telefono],
+           [email],
+           [pagina_web],
+           [id_titular]
+)
+VALUES
+(
+           'NINGUNO',
+           'NINGUNO',
+           'NINGUNO',
+           1,
+           'NINGUNO',
+           1,
+           1,
+           'NINGUNO',
+           'NINGUNO',
+           'NINGUNO',
+            1 
+)
+GO
+
+
+INSERT INTO [dbo].[Empresas_de_transporte]
+(
+           [nombre_empresa],
+           [cuit_empresa],
+           [id_calle],
+           [nro_calle],
+           [id_provincia],
+           [id_localidad],
+           [telefono],
+           [email],
+           [pagina_web],
+           [contacto],
+           [id_situacion_iva]
+)
+VALUES
+(
+           'NINGUNO',
+           'NINGUNO',
+           1,
+           'NINGUNO',
+           1,
+           1,
+           'NINGUNO',
+           'NINGUNO',
+           'NINGUNO',
+           'NINGUNO',
+            1 
+)
+GO
+
+
+INSERT INTO [dbo].[Entregador]
+(
+           [nombre_entregador],
+           [cuit_entregador]
+)
+VALUES
+(
+           'NINGUNO',
+           'NINGUNO'
+)
+GO
+
+
+INSERT INTO [dbo].[Estado_maleza]
+(
+           [nombre_estado_maleza]
+)
+VALUES
+(
+           'NINGUNO'
+)
+GO
+
+
+INSERT INTO [dbo].[Estado_plaga]
+(
+           [nombre_estado_plaga]
+)
+VALUES
+(
+           'NINGUNO'
+)
+GO
+
+
+INSERT INTO [dbo].[Factura]
+(
+           [id_cliente],
+           [numero_factura],
+           [fecha_factura],
+           [iva_factura],
+           [anulada],
+           [subtotal_factura],
+           [tipo_factura],
+           [total_iva],
+           [total_factura],
+           [total_letra],
+           [movimiento],
+           [responsable_inscripto],
+           [responsable_no_inscripto],
+           [contado],
+           [cuenta_corriente],
+           [numero_remito],
+           [impuesto],
+           [iva_no_inscripto]
+)
+VALUES
+(
+           1,
+           'NINGUNO',
+           '01-01-2000',
+           0,
+           0,
+           0,
+           'NINGUNO',
+           0,
+           0,
+           'NINGUNO',
+           'NINGUNO',
+           0,
+           0,
+           0,
+           0,
+           'NINGUNO',
+           0,
+            0 
+)
+GO
+
+
+INSERT INTO [dbo].[Fase_fenologica]
+(
+           [nombre_fase_fenologica]
+)
+VALUES
+(
+           'NINGUNO'
+)
+GO
+
+
+INSERT INTO [dbo].[Flete]
+(
+           [nombre_flete]
+)
+VALUES
+(
+           'NINGUNO'
+)
+GO
+
+
+INSERT INTO [dbo].[Gastos]
+(
+           [detalle],
+           [fecha],
+           [importe],
+           [id_cuenta],
+           [id_banco],
+           [id_empresa],
+           [periodo],
+           [control]
+)
+VALUES
+(
+           'NINGUNO',
+           '01-01-2000',
+           0,
+           1,
+           1,
+           1,
+           '01-01-2000',
+            0 
+)
+GO
+
+
+INSERT INTO [dbo].[Grupo_campana]
+(
+           [nombre_campana]
+)
+VALUES
+(
+           'NINGUNO'
+)
+GO
+
+
+INSERT INTO [dbo].[Grupo_de_socios]
+(
+           [nombre_grupo]
+)
+VALUES
+(
+           'NINGUNO'
+)
+GO
+
+
+INSERT INTO [dbo].[Humedad]
+(
+           [id_cultivo],
+           [humedad],
+           [merma]
+)
+VALUES
+(
+           1,
+           0,
+            0 
+)
+GO
+
+
+INSERT INTO [dbo].[Iaf]
+(
+           [nombre_iaf]
+)
+VALUES
+(
+            0 
+)
+GO
+
+
+INSERT INTO [dbo].[Implemento]
+(
+           [nombre_implemento]
+)
+VALUES
+(
+           'NINGUNO'
+)
+GO
+
+
+INSERT INTO [dbo].[Impuestos]
+(
+           [nombre_impuesto]
+)
+VALUES
+(
+           'NINGUNO'
+)
+GO
+
+
+INSERT INTO [dbo].[Ingreso_cereal]
+(
+           [fecha_ingreso_cereal],
+           [id_empresa],
+           [id_cultivo],
+           [cantidad_ingreso_cereal],
+           [id_humedad],
+           [id_almacen],
+           [id_subalmacen],
+           [id_campo],
+           [id_lote],
+           [id_grupo_socios]
+)
+VALUES
+(
+           '01-01-2000',
+           1,
+           1,
+           0,
+           1,
+           1,
+           1,
+           1,
+           1,
+            1 
+)
+GO
+
+
+INSERT INTO [dbo].[Ingresos_directos]
+(
+           [id_iva_venta],
+           [id_cliente],
+           [nro_comprobante],
+           [fecha_retencion],
+           [nro_certificado],
+           [importe_retenido],
+           [id_empresa],
+           [fecha_ingreso],
+           [retencion_ganancias]
+)
+VALUES
+(
+           1,
+           1,
+           'NINGUNO',
+           '01-01-2000',
+           'NINGUNO',
+           0,
+           1,
+           '01-01-2000',
+            0 
+)
+GO
+
+
+INSERT INTO [dbo].[Ingresos_stock]
+(
+           [fecha],
+           [id_insumo],
+           [id_almacen],
+           [cantidad],
+           [id_unidad],
+           [precio],
+           [fecha_comprobante],
+           [id_tipo_comprobante],
+           [numero_comprobante],
+           [id_proveedor],
+           [id_grupo_socios]
+)
+VALUES
+(
+           '01-01-2000',
+           1,
+           1,
+           0,
+           1,
+           0,
+           '01-01-2000',
+           1,
+           'NINGUNO',
+           1,
+            1 
+)
+GO
+
+
+INSERT INTO [dbo].[Insumos]
+(
+           [nombre_insumo],
+           [id_principio_activo],
+           [id_unidad],
+           [id_tipo_insumo]
+)
+VALUES
+(
+           'NINGUNO',
+           1,
+           1,
+            1 
+)
+GO
+
+
+INSERT INTO [dbo].[Item]
+(
+           [nombre_item]
+)
+VALUES
+(
+           'NINGUNO'
+)
+GO
+
+
+INSERT INTO [dbo].[Iva_compras]
+(
+           [id_empresa],
+           [id_proveedor],
+           [id_tipo_comprobante],
+           [nro_comprobante],
+           [fecha_comprobante],
+           [importe_gravado1],
+           [alicuota1],
+           [iva_compras1],
+           [importe_gravado2],
+           [alicuota2],
+           [iva_compras2]
+)
+VALUES
+(
+           1,
+           1,
+           1,
+           'NINGUNO',
+           '01-01-2000',
+           0,
+           0,
+           0,
+           0,
+           0,
+            0 
+)
+GO
+
+
+INSERT INTO [dbo].[Iva_ventas]
+(
+           [id_empresa],
+           [id_cliente],
+           [id_tipo_comprobante],
+           [nro_comprobante],
+           [fecha_comprobante],
+           [importe_gravado1],
+           [alicuota1],
+           [iva_ventas1],
+           [importe_gravado2],
+           [alicuota2],
+           [iva_ventas2]
+)
+VALUES
+(
+           1,
+           1,
+           1,
+           'NINGUNO',
+           '01-01-2000',
+           0,
+           0,
+           0,
+           0,
+           0,
+            0 
+)
+GO
+
+
+INSERT INTO [dbo].[Labores]
+(
+           [nombre_labor]
+)
+VALUES
+(
+           'NINGUNO'
+)
+GO
+
+
+INSERT INTO [dbo].[Limite]
+(
+           [id_banco],
+           [id_cuenta],
+           [limite]
+)
+VALUES
+(
+           1,
+           1,
+            0 
+)
+GO
+
+
+INSERT INTO [dbo].[Localidades]
+(
+           [nombre_localidad],
+           [codigo_postal],
+           [caracteristica_telefonica],
+           [id_provincia]
+)
+VALUES
+(
+           'NINGUNO',
+           'NINGUNO',
+           'NINGUNO',
+            1 
+)
+GO
+
+
+INSERT INTO [dbo].[Lotes]
+(
+           [nombre_lote],
+           [superficie_lote],
+           [id_campo]
+)
+VALUES
+(
+           'NINGUNO',
+           0,
+            1 
+)
+GO
+
+
+INSERT INTO [dbo].[Maleza]
+(
+           [nombre_maleza],
+           [id_medida],
+           [id_tipo_maleza]
+)
+VALUES
+(
+           'NINGUNO',
+           1,
+            1 
+)
+GO
+
+
+INSERT INTO [dbo].[Mantenimiento]
+(
+           [fecha_mantenimiento],
+           [odometro],
+           [fecha_aviso],
+           [id_tipo_mantenimiento],
+           [id_maquinaria]
+)
+VALUES
+(
+           '01-01-2000',
+           0,
+           '01-01-2000',
+           1,
+            1 
+)
+GO
+
+
+INSERT INTO [dbo].[Maquinarias]
+(
+           [nombre_maquinaria],
+           [modelo],
+           [id_marca_maquinaria],
+           [id_empresa],
+           [fecha_fabricacion]
+)
+VALUES
+(
+           'NINGUNO',
+           'NINGUNO',
+           1,
+           1,
+           '01-01-2000'
+)
+GO
+
+
+INSERT INTO [dbo].[Marca_camiones]
+(
+           [nombre_marca]
+)
+VALUES
+(
+           'NINGUNO'
+)
+GO
+
+
+INSERT INTO [dbo].[Marca_maquinarias]
+(
+           [nombre_marca]
+)
+VALUES
+(
+           'NINGUNO'
+)
+GO
+
+
+INSERT INTO [dbo].[Medida]
+(
+           [nombre_medida]
+)
+VALUES
+(
+           'NINGUNO'
+)
+GO
+
+
+INSERT INTO [dbo].[Movimiento_empleado]
+(
+           [id_empleado],
+           [id_maquinaria],
+           [sueldo],
+           [porcentaje_uso],
+           [ha_uso],
+           [id_campana],
+           [id_labor],
+           [fecha]
+)
+VALUES
+(
+           1,
+           1,
+           0,
+           0,
+           0,
+           1,
+           1,
+           '01-01-2000'
+)
+GO
+
+
+INSERT INTO [dbo].[Movimiento_insecto]
+(
+           [id_plaga],
+           [id_estado_plaga],
+           [id_movimiento_plaga],
+           [cantidad],
+           [detalle]
+)
+VALUES
+(
+           1,
+           1,
+           1,
+           0,
+           'NINGUNO'
+)
+GO
+
+
+INSERT INTO [dbo].[Movimiento_insumo_especial]
+(
+           [fecha],
+           [id_campana],
+           [id_insumo],
+           [cantidad],
+           [precio],
+           [detalle]
+)
+VALUES
+(
+           '01-01-2000',
+           1,
+           1,
+           0,
+           0,
+           'NINGUNO'
+)
+GO
+
+
+INSERT INTO [dbo].[Movimiento_labor]
+(
+           [id_campana],
+           [fecha],
+           [id_labor],
+           [precio],
+           [Ha_campana]
+)
+VALUES
+(
+           1,
+           '01-01-2000',
+           1,
+           0,
+            0 
+)
+GO
+
+
+INSERT INTO [dbo].[Movimiento_maquina]
+(
+           [id_maquinaria],
+           [id_implemento],
+           [tercerizado],
+           [porcentaje_ha],
+           [ha_trabajada],
+           [id_campana],
+           [id_labor],
+           [fecha]
+)
+VALUES
+(
+           1,
+           1,
+           0,
+           0,
+           0,
+           1,
+           1,
+           '01-01-2000'
+)
+GO
+
+
+INSERT INTO [dbo].[Movimiento_plaga]
+(
+           [id_campana],
+           [id_sub_fase_fenologica],
+           [id_defoliacion],
+           [id_iaf],
+           [observacion],
+           [recomendacion],
+           [fecha]
+)
+VALUES
+(
+           1,
+           1,
+           1,
+           1,
+           'NINGUNO',
+           'NINGUNO',
+           '01-01-2000'
+)
+GO
+
+
+INSERT INTO [dbo].[Movimientos_insumos]
+(
+           [fecha],
+           [id_campana],
+           [id_insumo],
+           [id_almacen],
+           [cantidad],
+           [precio],
+           [id_unidad],
+           [id_principio_activo],
+           [detalle]
+)
+VALUES
+(
+           '01-01-2000',
+           1,
+           1,
+           1,
+           0,
+           0,
+           1,
+           1,
+           'NINGUNO'
+)
+GO
+
+
+INSERT INTO [dbo].[Movimientos_labores]
+(
+           [id_campana],
+           [fecha],
+           [id_labor],
+           [id_empleado],
+           [precio],
+           [id_maquinaria],
+           [superficie]
+)
+VALUES
+(
+           1,
+           '01-01-2000',
+           1,
+           1,
+           0,
+           1,
+            0 
+)
+GO
+
+
+INSERT INTO [dbo].[Movimientos_stock]
+(
+           [fecha],
+           [id_insumo],
+           [id_almacen_origen],
+           [id_almacen_destino],
+           [cantidad],
+           [id_unidad],
+           [id_grupo_socios_origen],
+           [id_grupo_socios_destino]
+)
+VALUES
+(
+           '01-01-2000',
+           1,
+           1,
+           1,
+           0,
+           1,
+           1,
+            1 
+)
+GO
+
+
+INSERT INTO [dbo].[Pago_empleado]
+(
+           [fecha_pago_empleado],
+           [pago_empleado],
+           [numero_recibo_pago_empleado],
+           [id_empresa],
+           [id_empleado],
+           [efectivo_empleado],
+           [numero_cheque_empleado],
+           [fecha_emision_cheque_empleado],
+           [fecha_pago_cheque_empleado],
+           [detalle_cheque_empleado]
+)
+VALUES
+(
+           '01-01-2000',
+           0,
+           'NINGUNO',
+           1,
+           1,
+           0,
+           'NINGUNO',
+           '01-01-2000',
+           '01-01-2000',
+           'NINGUNO'
+)
+GO
+
+
+INSERT INTO [dbo].[Pais]
+(
+           [nombre_pais]
+)
+VALUES
+(
+           'NINGUNO'
+)
+GO
+
+
+INSERT INTO [dbo].[Password]
+(
+           [usuario],
+           [password]
+)
+VALUES
+(
+           'NINGUNO',
+           'NINGUNO'
+)
+GO
+
+
+INSERT INTO [dbo].[Plaga]
+(
+           [nombre_plaga],
+           [id_medida],
+           [id_tipo_plaga]
+)
+VALUES
+(
+           'NINGUNO',
+           1,
+            1 
+)
+GO
+
+
+INSERT INTO [dbo].[Porcentajes]
+(
+           [campaña],
+           [id_grupo_socios],
+           [id_empresa],
+           [porcentaje],
+           [id_campo],
+           [id_lote],
+           [fecha_inicio],
+           [fecha_fin],
+           [id_cultivo],
+           [superficie]
+)
+VALUES
+(
+           'NINGUNO',
+           1,
+           1,
+           0,
+           1,
+           1,
+           '01-01-2000',
+           '01-01-2000',
+           1,
+            0 
+)
+GO
+
+
+INSERT INTO [dbo].[Principio_activo]
+(
+           [nombre_principio_activo]
+)
+VALUES
+(
+           'NINGUNO'
+)
+GO
+
+
+INSERT INTO [dbo].[Proveedores]
+(
+           [nombre_proveedor],
+           [contacto],
+           [cuit_proveedor],
+           [id_calle],
+           [nro_calle],
+           [id_localidad],
+           [id_provincia],
+           [telefono],
+           [email],
+           [pagina_web]
+)
+VALUES
+(
+           'NINGUNO',
+           'NINGUNO',
+           'NINGUNO',
+           1,
+           'NINGUNO',
+           1,
+           1,
+           'NINGUNO',
+           'NINGUNO',
+           'NINGUNO'
+)
+GO
+
+
+INSERT INTO [dbo].[Provincias]
+(
+           [nombre_provincia]
+)
+VALUES
+(
+           'NINGUNO'
+)
+GO
+
+
+INSERT INTO [dbo].[Proyeccion]
+(
+           [nombre_proyeccion],
+           [id_grupo_campana],
+           [cotizacion_dolar],
+           [precio_pizarra],
+           [comision],
+           [flete],
+           [rinde]
+)
+VALUES
+(
+           'NINGUNO',
+           1,
+           0,
+           0,
+           0,
+           0,
+            0 
+)
+GO
+
+
+INSERT INTO [dbo].[Proyeccion_cultivo]
+(
+           [id_grupo_campana],
+           [id_cultivo],
+           [precio_proyeccion],
+           [rinde_proyeccion],
+           [bandera_proyeccion]
+)
+VALUES
+(
+           1,
+           1,
+           0,
+           0,
+            0 
+)
+GO
+
+
+INSERT INTO [dbo].[Proyeccion_dolar]
+(
+           [id_grupo_campana],
+           [comision_proyeccion],
+           [flete_proyeccion],
+           [cotizacion_dolar]
+)
+VALUES
+(
+           1,
+           0,
+           0,
+            0 
+)
+GO
+
+
+INSERT INTO [dbo].[Proyeccion_especial]
+(
+           [id_grupo_campana],
+           [id_insumo],
+           [cantidad_proyeccion_especial],
+           [precio_proyeccion_especial],
+           [indirecto_proyeccion_especial]
+)
+VALUES
+(
+           1,
+           1,
+           0,
+           0,
+            0 
+)
+GO
+
+
+INSERT INTO [dbo].[Proyeccion_insumo]
+(
+           [id_grupo_campana],
+           [id_insumo],
+           [cantidad_proyeccion_insumo],
+           [precio_proyeccion_insumo]
+)
+VALUES
+(
+           1,
+           1,
+           0,
+            0 
+)
+GO
+
+
+INSERT INTO [dbo].[Proyeccion_labor]
+(
+           [id_grupo_campana],
+           [id_labor],
+           [cantidad_proyeccion_labor],
+           [precio_proyeccion_labor],
+           [indirecto_proyeccion_labor]
+)
+VALUES
+(
+           1,
+           1,
+           0,
+           0,
+            0 
+)
+GO
+
+
+INSERT INTO [dbo].[Proyeccion_temporal]
+(
+           [nombre_proyeccion_temporal],
+           [precio_proyeccion_temporal]
+)
+VALUES
+(
+           'NINGUNO',
+            0 
+)
+GO
+
+
+INSERT INTO [dbo].[Remitente_destino]
+(
+           [razon_social],
+           [cuit],
+           [actividad],
+           [id_situacion_iva],
+           [domicilio_fiscal],
+           [id_localidad],
+           [id_provincia],
+           [cau],
+           [numero_operador],
+           [numero_planta]
+)
+VALUES
+(
+           'NINGUNO',
+           'NINGUNO',
+           'NINGUNO',
+           1,
+           'NINGUNO',
+           1,
+           1,
+           'NINGUNO',
+           'NINGUNO',
+           'NINGUNO'
+)
+GO
+
+
+INSERT INTO [dbo].[Rendimiento]
+(
+           [longitud],
+           [latitud],
+           [flujo],
+           [tiempo],
+           [intervalo],
+           [distancia],
+           [ancho],
+           [humedad],
+           [cabezal],
+           [paso],
+           [campo],
+           [serie],
+           [carga],
+           [grano],
+           [gps],
+           [pdop],
+           [altitud]
+)
+VALUES
+(
+           0,
+           0,
+           0,
+           0,
+           0,
+           0,
+           0,
+           0,
+           0,
+           0,
+           0,
+           'NINGUNO',
+           'NINGUNO',
+           'NINGUNO',
+           0,
+           0,
+            0 
+)
+GO
+
+
+INSERT INTO [dbo].[Resumen_cuenta]
+(
+           [debe],
+           [haber],
+           [detalle],
+           [fecha],
+           [id_empresa],
+           [id_banco],
+           [id_cuenta]
+)
+VALUES
+(
+           0,
+           0,
+           'NINGUNO',
+           '01-01-2000',
+           1,
+           1,
+            1 
+)
+GO
+
+
+INSERT INTO [dbo].[Resumen_cuenta_2]
+(
+           [debe],
+           [haber],
+           [detalle],
+           [fecha],
+           [id_empresa],
+           [saldo],
+           [id_banco],
+           [id_cuenta]
+)
+VALUES
+(
+           0,
+           0,
+           'NINGUNO',
+           '01-01-2000',
+           1,
+           0,
+           1,
+            1 
+)
+GO
+
+
+INSERT INTO [dbo].[Resumen_cuenta_3]
+(
+           [debe],
+           [haber],
+           [detalle],
+           [fecha],
+           [saldo],
+           [id_empresa],
+           [id_banco],
+           [id_cuenta]
+)
+VALUES
+(
+           0,
+           0,
+           'NINGUNO',
+           '01-01-2000',
+           0,
+           1,
+           1,
+            1 
+)
+GO
+
+
+INSERT INTO [dbo].[Resumen_cuenta_4]
+(
+           [detalle],
+           [fecha],
+           [debe],
+           [haber],
+           [saldo],
+           [id_empresa],
+           [id_banco],
+           [id_cuenta]
+)
+VALUES
+(
+           'NINGUNO',
+           '01-01-2000',
+           0,
+           0,
+           0,
+           1,
+           1,
+            1 
+)
+GO
+
+
+INSERT INTO [dbo].[Resumen_empleado]
+(
+           [debe_empleado],
+           [haber_empleado],
+           [detalle_empleado],
+           [fecha_empleado],
+           [saldo_empleado]
+)
+VALUES
+(
+           0,
+           0,
+           'NINGUNO',
+           '01-01-2000',
+            0 
+)
+GO
+
+
+INSERT INTO [dbo].[Resumen_empleado_temporal]
+(
+           [importe]
+)
+VALUES
+(
+            0 
+)
+GO
+
+
+INSERT INTO [dbo].[Resumen_rinde]
+(
+           [lote],
+           [campo],
+           [cultivo],
+           [cantidad],
+           [unidad],
+           [superficie],
+           [humedad],
+           [merma],
+           [total_seco],
+           [id_cultivo],
+           [id_grupo_campana]
+)
+VALUES
+(
+           'NINGUNO',
+           'NINGUNO',
+           'NINGUNO',
+           0,
+           'NINGUNO',
+           0,
+           0,
+           0,
+           0,
+           1,
+            1 
+)
+GO
+
+
+INSERT INTO [dbo].[Resumen_stock]
+(
+           [fecha],
+           [movimiento],
+           [almacen],
+           [insumo],
+           [cantidad],
+           [unidad],
+           [precio],
+           [total],
+           [descripcion],
+           [detalle]
+)
+VALUES
+(
+           '01-01-2000',
+           'NINGUNO',
+           'NINGUNO',
+           'NINGUNO',
+           0,
+           'NINGUNO',
+           0,
+           0,
+           'NINGUNO',
+           'NINGUNO'
+)
+GO
+
+
+INSERT INTO [dbo].[Resumen_temporal]
+(
+           [importe],
+           [detalle],
+           [fecha]
+)
+VALUES
+(
+           0,
+           'NINGUNO',
+           '01-01-2000'
+)
+GO
+
+
+INSERT INTO [dbo].[Retencion]
+(
+           [nombre_retencion],
+           [estado_activa]
+)
+VALUES
+(
+           'NINGUNO',
+            0 
+)
+GO
+
+
+INSERT INTO [dbo].[Rinde_campaña]
+(
+           [id_campana],
+           [rinde]
+)
+VALUES
+(
+           1,
+            0 
+)
+GO
+
+
+INSERT INTO [dbo].[Saldo_bancos]
+(
+           [id_empresa],
+           [fecha_saldo],
+           [saldo],
+           [id_cuenta]
+)
+VALUES
+(
+           1,
+           '01-01-2000',
+           0,
+            1 
+)
+GO
+
+
+INSERT INTO [dbo].[Saldo_empleado]
+(
+           [fecha_saldo_empleado],
+           [saldo_empleado],
+           [id_empleado],
+           [id_empresa]
+)
+VALUES
+(
+           '01-01-2000',
+           0,
+           1,
+            1 
+)
+GO
+
+
+INSERT INTO [dbo].[Saldos]
+(
+           [id_empresa],
+           [fecha_saldo],
+           [saldo],
+           [saldo_libre],
+           [utilizado],
+           [otro],
+           [detalle],
+           [decreto_730],
+           [combustible],
+           [bandera]
+)
+VALUES
+(
+           1,
+           '01-01-2000',
+           0,
+           0,
+           0,
+           0,
+           'NINGUNO',
+           0,
+           0,
+            1 
+)
+GO
+
+
+INSERT INTO [dbo].[Situacion_iva]
+(
+           [nombre_situacion_iva]
+)
+VALUES
+(
+           'NINGUNO'
+)
+GO
+
+
+INSERT INTO [dbo].[Stock_cultivos]
+(
+           [id_cultivo],
+           [id_almacen],
+           [id_campo],
+           [id_lote],
+           [cantidad],
+           [id_subalmacen],
+           [id_grupo_socios]
+)
+VALUES
+(
+           1,
+           1,
+           1,
+           1,
+           0,
+           1,
+            1 
+)
+GO
+
+
+INSERT INTO [dbo].[Stock_insumos]
+(
+           [id_insumo],
+           [id_almacen],
+           [cantidad],
+           [precio],
+           [id_grupo_socios]
+)
+VALUES
+(
+           1,
+           1,
+           0,
+           0,
+            1 
+)
+GO
+
+
+INSERT INTO [dbo].[Sub_fase_fenologica]
+(
+           [nombre_sub_fase_fenologica],
+           [id_fase_fenologica]
+)
+VALUES
+(
+           'NINGUNO',
+            1 
+)
+GO
+
+
+INSERT INTO [dbo].[Subalmacenes]
+(
+           [nombre_subalmacen],
+           [id_almacen]
+)
+VALUES
+(
+           'NINGUNO',
+            1 
+)
+GO
+
+
+INSERT INTO [dbo].[Sueldo_empleados]
+(
+           [id_empleado],
+           [id_labor],
+           [precio]
+)
+VALUES
+(
+           1,
+           1,
+            0 
+)
+GO
+
+
+INSERT INTO [dbo].[Tipo_almacen]
+(
+           [tipo_almacen]
+)
+VALUES
+(
+           'NINGUNO'
+)
+GO
+
+
+INSERT INTO [dbo].[Tipo_comprobantes]
+(
+           [tipo_comprobante],
+           [abreviatura]
+)
+VALUES
+(
+           'NINGUNO',
+           'NINGUNO'
+)
+GO
+
+
+INSERT INTO [dbo].[Tipo_granos]
+(
+           [tipo_grano]
+)
+VALUES
+(
+           'NINGUNO'
+)
+GO
+
+
+INSERT INTO [dbo].[Tipo_insumos]
+(
+           [tipo_insumo]
+)
+VALUES
+(
+           'NINGUNO'
+)
+GO
+
+
+INSERT INTO [dbo].[Tipo_maleza]
+(
+           [nombre_tipo_maleza]
+)
+VALUES
+(
+           'NINGUNO'
+)
+GO
+
+
+INSERT INTO [dbo].[Tipo_mantenimiento]
+(
+           [tipo_mantenimiento]
+)
+VALUES
+(
+           'NINGUNO'
+)
+GO
+
+
+INSERT INTO [dbo].[Tipo_movimiento_bancario]
+(
+           [tipo_movimiento_bancario],
+           [id_haber_debe]
+)
+VALUES
+(
+           'NINGUNO',
+            1 
+)
+GO
+
+
+INSERT INTO [dbo].[Tipo_plaga]
+(
+           [nombre_tipo_plaga]
+)
+VALUES
+(
+           'NINGUNO'
+)
+GO
+
+
+INSERT INTO [dbo].[Titulares]
+(
+           [nombre_titular],
+           [apellido_titular],
+           [cuil_titular],
+           [id_calle],
+           [nro_calle],
+           [id_provincia],
+           [id_localidad],
+           [telefono],
+           [email]
+)
+VALUES
+(
+           'NINGUNO',
+           'NINGUNO',
+           'NINGUNO',
+           1,
+           'NINGUNO',
+           1,
+           1,
+           'NINGUNO',
+           'NINGUNO'
+)
+GO
+
+
+INSERT INTO [dbo].[Transferencia_cereal]
+(
+           [fecha],
+           [id_cultivo],
+           [id_almacen_origen],
+           [id_subalmacen_origen],
+           [id_almacen_destino],
+           [id_subalmacen_destino],
+           [cantidad],
+           [id_grupo_socio_origen],
+           [id_grupo_socio_destino],
+           [id_humedad]
+)
+VALUES
+(
+           '01-01-2000',
+           1,
+           1,
+           1,
+           1,
+           1,
+           0,
+           1,
+           1,
+            1 
+)
+GO
+
+
+INSERT INTO [dbo].[Transferencias_bancarias]
+(
+           [fecha],
+           [comprobante],
+           [detalle],
+           [banco_origen],
+           [banco_destino],
+           [id_cuenta],
+           [importe],
+           [id_empresa],
+           [periodo],
+           [control]
+)
+VALUES
+(
+           '01-01-2000',
+           'NINGUNO',
+           'NINGUNO',
+           1,
+           1,
+           1,
+           0,
+           1,
+           '01-01-2000',
+            0 
+)
+GO
+
+
+INSERT INTO [dbo].[Unidades]
+(
+           [nombre_unidad],
+           [abreviatura]
+)
+VALUES
+(
+           'NINGUNO',
+           'NINGUNO'
+)
+GO
+
+
+INSERT INTO [dbo].[Zona]
+(
+           [nombre_zona],
+           [id_provincia]
+)
+VALUES
+(
+           'NINGUNO',
+            1 
+)
+GO
+
