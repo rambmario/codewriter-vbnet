@@ -16,7 +16,7 @@ Public Class frmPrincipal
     Dim NumeroFilas As Integer
 
 
-    ' Defino el array donde se guardarán los datos de la tabla
+    ' Defino el array donde se guardarï¿½n los datos de la tabla
     'Dim arrEstructura() As regSistemaTabla
 
     Const baseCon As String = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog={1};Data Source={0}"
@@ -54,7 +54,7 @@ Public Class frmPrincipal
     End Sub
 
     Private Sub chkNombresAutomaticos_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chkNombresAutomaticos.CheckedChanged
-        ' Verirfico el estado del campo nombres automáticos
+        ' Verirfico el estado del campo nombres automï¿½ticos
         If chkNombresAutomaticos.Checked Then
             ' Deshabilito los casilleros
             txtArchivo.Enabled = False
@@ -77,7 +77,7 @@ Public Class frmPrincipal
     End Sub
 
     Private Sub chkTodasLasTablas_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chkTodasLasTablas.CheckedChanged
-        ' Verifico si está o no marcado el control para crear todas las clases de una db
+        ' Verifico si estï¿½ o no marcado el control para crear todas las clases de una db
         If chkTodasLasTablas.Checked Then
             chkNombresAutomaticos.Enabled = False
             chkNombresAutomaticos.Checked = False
@@ -113,7 +113,7 @@ Public Class frmPrincipal
 
         ' Verifico si se trata de una o todas las tablas
         If Not chkTodasLasTablas.Checked Then
-            ' Solicito confirmación antes de crear la clase
+            ' Solicito confirmaciï¿½n antes de crear la clase
             If MessageBox.Show("Desea Crear la Clase '" & txtClase.Text & "' Para la Tabla '" & txtTabla.Text & "' ?", "CONFIRMACION", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = Windows.Forms.DialogResult.Yes Then
                 ' Cargo la estructura de la tabla en un array "modular"
                 Call Cargar(txtCadena.Text, txtTabla.Text)
@@ -163,7 +163,7 @@ Public Class frmPrincipal
                 End If
 
                 ' Indico que se ha generado la clase
-                MessageBox.Show("Se Generó la Clase '" & txtClase.Text & "' en el Archivo '" & txtArchivo.Text & "' de la Tabla '" & txtTabla.Text & "'." & Chr(13) & Chr(13) & "El Archivo se Guardó en C:\." & Chr(13) & Chr(13) & "Copiar la Clase en el Proyecto y Agregarla con --> Agregar elemento existente", "GENERACION DE CLASES", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Se Generï¿½ la Clase '" & txtClase.Text & "' en el Archivo '" & txtArchivo.Text & "' de la Tabla '" & txtTabla.Text & "'." & Chr(13) & Chr(13) & "El Archivo se Guardï¿½ en C:\." & Chr(13) & Chr(13) & "Copiar la Clase en el Proyecto y Agregarla con --> Agregar elemento existente", "GENERACION DE CLASES", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Me.btnSP.Enabled = True
             End If
         Else
@@ -174,7 +174,7 @@ Public Class frmPrincipal
             Dim cbSistema As New SqlCommandBuilder(da)
             Dim dt As New DataTable
             da.Fill(dt)
-            ' Solicito confirmación antes de crear todas las tablas
+            ' Solicito confirmaciï¿½n antes de crear todas las tablas
             If MessageBox.Show("Desea las Clases Para Todas las Tablas de la Base de Datos Seleccionada ?", "CONFIRMACION", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) = Windows.Forms.DialogResult.Yes Then
                 Me.ProgressBar1.Value = Me.ProgressBar1.Minimum
                 Me.ProgressBar1.Maximum = dt.Rows.Count - 1
@@ -228,14 +228,14 @@ Public Class frmPrincipal
 
                     indice = indice + 1
                 Next
-                MessageBox.Show("Se Generó la Clase Para Todas las Tablas de la Base de Datos." & Chr(13) & Chr(13) & "Los Archivos se Guardaron en C:\." & Chr(13) & Chr(13) & "Copiar la Clase en el Proyecto y Agregarla con --> Agregar elemento existente", "GENERACION DE CLASES", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Se Generï¿½ la Clase Para Todas las Tablas de la Base de Datos." & Chr(13) & Chr(13) & "Los Archivos se Guardaron en C:\." & Chr(13) & Chr(13) & "Copiar la Clase en el Proyecto y Agregarla con --> Agregar elemento existente", "GENERACION DE CLASES", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Me.btnTodoSp.Enabled = True
             End If
         End If
     End Sub
 
     Private Sub CambioNombreTabla(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles txtTabla.KeyUp
-        ' Verifico si se está en nombres automáticos
+        ' Verifico si se estï¿½ en nombres automï¿½ticos
         If chkNombresAutomaticos.Checked Then
             Call GenerarNombres()
         End If
@@ -290,7 +290,7 @@ Public Class frmPrincipal
         End If
     End Sub
 
-    ' Este procedimiento recibe una cadena conexión y el nombre de una tabla y carga un array con el nombre y tiposql de cada uno de los campos de la tabla.
+    ' Este procedimiento recibe una cadena conexiï¿½n y el nombre de una tabla y carga un array con el nombre y tiposql de cada uno de los campos de la tabla.
     ' El array es de tiposql regSistemaTabla y su alcance es "modular". El mismo es una estructura conteniendo nombre y tiposql del campo. Los tiposqls de los campos se
     ' guardan en el formato "oficial" de .NET (por ejemplo los Integer son Int32, etc.).
 
@@ -747,7 +747,7 @@ Public Class frmPrincipal
 
 
     Private Sub Cargar(ByVal conexion As String, ByVal tabla As String)
-        ' Defino variables de acceso y manipulación de datos
+        ' Defino variables de acceso y manipulaciï¿½n de datos
         Dim cn As New SqlConnection(conexion)
         Dim da As New SqlDataAdapter("SELECT * FROM [" & tabla & "]", cn) ' los [] ban por si es una tabla de nombre compuesto
         '  Dim datiposql As New SqlDataAdapter("SELECT TOP 100 PERCENT dbo.sysobjects.name AS tabla, dbo.syscolumns.scale, dbo.syscolumns.name AS campo, dbo.systypes.name AS tiposql, isnull(dbo.syscomments.text,'') AS defecto, dbo.syscolumns.isnullable AS isnull, dbo.syscolumns.length AS longitud, dbo.syscolumns.prec, ISNULL(dbo.sysproperties.[value],'') AS descripcion FROM dbo.syscolumns INNER JOIN dbo.sysobjects ON dbo.syscolumns.id = dbo.sysobjects.id INNER JOIN dbo.systypes ON dbo.syscolumns.xusertype = dbo.systypes.xtype LEFT OUTER JOIN dbo.sysproperties ON dbo.syscolumns.id = dbo.sysproperties.id AND dbo.syscolumns.colid = dbo.sysproperties.smallid LEFT OUTER JOIN dbo.syscomments ON dbo.syscolumns.cdefault = dbo.syscomments.id where dbo.sysobjects.name='" & tabla & "' ORDER BY dbo.syscolumns.colid", cn)
@@ -794,129 +794,129 @@ Public Class frmPrincipal
         indice = 0
         For Each dc In dt.Columns()
             ' Guardo el nombre y tiposql de cada uno de los campos
-            ' La fórmula en el tiposql es para eliminar el "system." si llegase a aparecer
+            ' La fï¿½rmula en el tiposql es para eliminar el "system." si llegase a aparecer
             arrEstructura(indice).tiposql = Mid$(dc.DataType.ToString, InStr(dc.DataType.ToString, ".", CompareMethod.Text) + 1)
-            ' Incremento la posisión dentro del array
+            ' Incremento la posisiï¿½n dentro del array
             Select Case arrEstructura(indice).tipo
                 Case "int"
                     arrEstructura(indice).valorinicial = 0
-                    arrEstructura(indice).sptamaño = ""
+                    arrEstructura(indice).sptamanio = ""
                     arrEstructura(indice).valorinsert = 1
                     arrEstructura(indice).tipopocket = "int"
                 Case "binary"
                     arrEstructura(indice).valorinicial = 0
-                    arrEstructura(indice).sptamaño = ""
+                    arrEstructura(indice).sptamanio = ""
                     arrEstructura(indice).tipopocket = "binary"
                 Case "bit"
                     arrEstructura(indice).valorinicial = False
-                    arrEstructura(indice).sptamaño = ""
+                    arrEstructura(indice).sptamanio = ""
                     arrEstructura(indice).valorinsert = 0
                     arrEstructura(indice).tipopocket = "bit"
                 Case "char"
                     arrEstructura(indice).valorinicial = """"""
-                    arrEstructura(indice).sptamaño = "(" & arrEstructura(indice).longitud & ")"
+                    arrEstructura(indice).sptamanio = "(" & arrEstructura(indice).longitud & ")"
                     arrEstructura(indice).valorinsert = "''"
                     arrEstructura(indice).tipopocket = "nchar(50)"
                 Case "datetime"
                     arrEstructura(indice).valorinicial = "DateTime.Now"
-                    arrEstructura(indice).sptamaño = ""
+                    arrEstructura(indice).sptamanio = ""
                     arrEstructura(indice).valorinsert = "'01-01-2000'"
                     arrEstructura(indice).tipopocket = "datetime"
                 Case "decimal"
                     arrEstructura(indice).valorinicial = 0
-                    arrEstructura(indice).sptamaño = "(" & arrEstructura(indice).precicion & "," & arrEstructura(indice).escala & ")"
+                    arrEstructura(indice).sptamanio = "(" & arrEstructura(indice).precicion & "," & arrEstructura(indice).escala & ")"
                     arrEstructura(indice).valorinsert = 0
                     arrEstructura(indice).tipopocket = "numeric(18,2)"
                 Case "float"
                     arrEstructura(indice).valorinicial = 0
-                    arrEstructura(indice).sptamaño = ""
+                    arrEstructura(indice).sptamanio = ""
                     arrEstructura(indice).valorinsert = 0
                     arrEstructura(indice).tipopocket = "float"
                 Case "image"
                     arrEstructura(indice).valorinicial = 0
-                    arrEstructura(indice).sptamaño = ""
+                    arrEstructura(indice).sptamanio = ""
                     arrEstructura(indice).tipopocket = "image"
                 Case "bigint"
                     arrEstructura(indice).valorinicial = 0
-                    arrEstructura(indice).sptamaño = ""
+                    arrEstructura(indice).sptamanio = ""
                     arrEstructura(indice).tipopocket = "bigint"
                 Case "money"
                     arrEstructura(indice).valorinicial = 0
-                    arrEstructura(indice).sptamaño = ""
+                    arrEstructura(indice).sptamanio = ""
                     arrEstructura(indice).valorinsert = 0
                     arrEstructura(indice).tipopocket = "money"
                 Case "nchar"
                     arrEstructura(indice).valorinicial = """"""
-                    arrEstructura(indice).sptamaño = "(" & arrEstructura(indice).longitud & ")"
+                    arrEstructura(indice).sptamanio = "(" & arrEstructura(indice).longitud & ")"
                     arrEstructura(indice).valorinsert = "'Ninguno'"
                     arrEstructura(indice).tipopocket = "nchar(50)"
                 Case "ntext"
                     arrEstructura(indice).valorinicial = """"""
-                    arrEstructura(indice).sptamaño = "" '"(" & arrEstructura(indice).longitud & ")"
+                    arrEstructura(indice).sptamanio = "" '"(" & arrEstructura(indice).longitud & ")"
                     arrEstructura(indice).valorinsert = "'Ninguno'"
                     arrEstructura(indice).tipopocket = "ntext"
                 Case "numeric"
                     arrEstructura(indice).valorinicial = 0
-                    arrEstructura(indice).sptamaño = "(" & arrEstructura(indice).precicion & "," & arrEstructura(indice).escala & ")"
+                    arrEstructura(indice).sptamanio = "(" & arrEstructura(indice).precicion & "," & arrEstructura(indice).escala & ")"
                     arrEstructura(indice).valorinsert = 0
                     arrEstructura(indice).tipopocket = "numeric(18,2)"
                 Case "nvarchar"
                     arrEstructura(indice).valorinicial = """"""
-                    arrEstructura(indice).sptamaño = "" '"(" & arrEstructura(indice).longitud & ")"
+                    arrEstructura(indice).sptamanio = "" '"(" & arrEstructura(indice).longitud & ")"
                     arrEstructura(indice).valorinsert = "'Ninguno'"
                     arrEstructura(indice).tipopocket = "nvarchar(50)"
                 Case "sysname"
                     arrEstructura(indice).valorinicial = """"""
-                    arrEstructura(indice).sptamaño = ""
+                    arrEstructura(indice).sptamanio = ""
                     arrEstructura(indice).valorinsert = "'Ninguno'"
                 Case "real"
                     arrEstructura(indice).valorinicial = 0
-                    arrEstructura(indice).sptamaño = ""
+                    arrEstructura(indice).sptamanio = ""
                     arrEstructura(indice).valorinsert = 0
                     arrEstructura(indice).tipopocket = "real"
                 Case "smalldatetime"
                     arrEstructura(indice).valorinicial = DateTime.Now
-                    arrEstructura(indice).sptamaño = ""
+                    arrEstructura(indice).sptamanio = ""
                     arrEstructura(indice).valorinsert = "'01-01-2000'"
                 Case "smallint"
                     arrEstructura(indice).valorinicial = 0
-                    arrEstructura(indice).sptamaño = ""
+                    arrEstructura(indice).sptamanio = ""
                     arrEstructura(indice).valorinsert = 0
                     arrEstructura(indice).tipopocket = "smallint"
                 Case "smallmoney"
                     arrEstructura(indice).valorinicial = 0
-                    arrEstructura(indice).sptamaño = ""
+                    arrEstructura(indice).sptamanio = ""
                     arrEstructura(indice).valorinsert = 0
                 Case "sql_variant"
                     arrEstructura(indice).valorinicial = 0
-                    arrEstructura(indice).sptamaño = ""
+                    arrEstructura(indice).sptamanio = ""
                     arrEstructura(indice).valorinsert = 0
                 Case "text"
                     arrEstructura(indice).valorinicial = """"""
-                    arrEstructura(indice).sptamaño = "" '"(" & arrEstructura(indice).longitud & ")"
+                    arrEstructura(indice).sptamanio = "" '"(" & arrEstructura(indice).longitud & ")"
                     arrEstructura(indice).valorinsert = "'Ninguno'"
                 Case "timestamp"
                     arrEstructura(indice).valorinicial = 0
-                    arrEstructura(indice).sptamaño = ""
+                    arrEstructura(indice).sptamanio = ""
                     arrEstructura(indice).valorinsert = 0
                 Case "tinyint"
                     arrEstructura(indice).valorinicial = 0
-                    arrEstructura(indice).sptamaño = ""
+                    arrEstructura(indice).sptamanio = ""
                     arrEstructura(indice).valorinsert = 0
                     arrEstructura(indice).tipopocket = "tinyint"
                 Case "uniqueidentifier"
                     arrEstructura(indice).valorinicial = 0
-                    arrEstructura(indice).sptamaño = ""
+                    arrEstructura(indice).sptamanio = ""
                     arrEstructura(indice).valorinsert = 0
                     arrEstructura(indice).tipopocket = "uniqueidentifier"
                 Case "varbinary"
                     arrEstructura(indice).valorinicial = 0
-                    arrEstructura(indice).sptamaño = ""
+                    arrEstructura(indice).sptamanio = ""
                     arrEstructura(indice).valorinsert = 0
                     arrEstructura(indice).tipopocket = "varbinary"
                 Case "varchar"
                     arrEstructura(indice).valorinicial = """"""
-                    arrEstructura(indice).sptamaño = "(" & arrEstructura(indice).longitud & ")"
+                    arrEstructura(indice).sptamanio = "(" & arrEstructura(indice).longitud & ")"
                     arrEstructura(indice).valorinsert = "'Ninguno'"
                     arrEstructura(indice).tipopocket = "nvarchar(50)"
             End Select
@@ -926,10 +926,10 @@ Public Class frmPrincipal
 
     End Sub
 
-    ' Este procedimiento genera un Archivo de texto con extensión .VB con la definición de una clase correspondiente a una tabla de una base de datos.
-    ' Al basarse enteramente en la estructura de una tabla de SQL Server, las propiedades de la clases son el mismo tiposql que en la tabla "física", por
+    ' Este procedimiento genera un Archivo de texto con extensiï¿½n .VB con la definiciï¿½n de una clase correspondiente a una tabla de una base de datos.
+    ' Al basarse enteramente en la estructura de una tabla de SQL Server, las propiedades de la clases son el mismo tiposql que en la tabla "fï¿½sica", por
     ' ejemplo en lugar de tener propiedades tiposql Integer va a tener propiedades de tiposql Int32, en lugar de Short van a ser Int16, etc.
-    ' Esto no genera ningún problema, ya que VB.NET convierte en forma automática los datos (ya que las clase toma los datos "oficiales" de .NET).
+    ' Esto no genera ningï¿½n problema, ya que VB.NET convierte en forma automï¿½tica los datos (ya que las clase toma los datos "oficiales" de .NET).
 
     'Private Sub GenerarClase(ByVal PathCls As String, ByVal clase As String)
     '    ' Doy formato al nombre del PathCls
@@ -957,7 +957,7 @@ Public Class frmPrincipal
     '    Dim idTabla As String
     '    Dim idParametro As String
 
-    '    ' Abro un PathCls de texto (si el mismo existía se reempleza)
+    '    ' Abro un PathCls de texto (si el mismo existï¿½a se reempleza)
     '    FileOpen(FileCls, PathCls, OpenMode.Output)
 
 
@@ -1016,7 +1016,7 @@ Public Class frmPrincipal
     '            ' Creo el pie del get de la propiedad
     '            PrintLine(FileCls, TAB(9), "End Get")
 
-    '            ' Creo una línea divisoria (espacio en blanco)
+    '            ' Creo una lï¿½nea divisoria (espacio en blanco)
     '            '' PrintLine(FileCls, "")
 
     '            ' Creo la cabecera del set de la propiedad
@@ -1031,7 +1031,7 @@ Public Class frmPrincipal
     '            ' Creo el pie de la propiedad
     '            PrintLine(FileCls, TAB(5), "end property")
 
-    '            ' Creo una línea divisoria (espacio en blanco)
+    '            ' Creo una lï¿½nea divisoria (espacio en blanco)
     '            PrintLine(FileCls, "")
     '        End If
     '    Next
@@ -1408,7 +1408,7 @@ Public Class frmPrincipal
 
 
     '    'consulta el archivo txt para importarlo
-    '    PrintLine(FileCls, TAB(5), "'importa los datos de una campaña desde el txt")
+    '    PrintLine(FileCls, TAB(5), "'importa los datos de una campaï¿½a desde el txt")
     '    PrintLine(FileCls, TAB(5), "Public Function Cargar_Archivo(ByVal path As String) As DataTable")
     '    PrintLine(FileCls, TAB(9), "Dim odt As New DataTable(" & """" & txtTabla.Text.Trim & """" & ")")
     '    PrintLine(FileCls, "")
@@ -1432,7 +1432,7 @@ Public Class frmPrincipal
     '    ' Comienzo a generar la clase
     '    PrintLine(FileCls, "End Class")
 
-    '    ' Cierro el PathCls de versión
+    '    ' Cierro el PathCls de versiï¿½n
     '    FileClose(FileCls)
 
 
@@ -1447,7 +1447,7 @@ Public Class frmPrincipal
     '        PathCls = Me.txtPath.Text & "\cls" & Me.txtTabla.Text & ".vb"
     '    End If
 
-    '    'Abro un PathCls de texto (si el mismo existía se reempleza)
+    '    'Abro un PathCls de texto (si el mismo existï¿½a se reempleza)
     '    FileOpen(FileCls, PathCls, OpenMode.Output)
 
     '    'importo las referencias
@@ -1479,7 +1479,7 @@ Public Class frmPrincipal
 
     '    PrintLine(FileCls, "End Class")
 
-    '    ' Cierro el PathCls de versión
+    '    ' Cierro el PathCls de versiï¿½n
     '    FileClose(FileCls)
 
 
@@ -1515,7 +1515,7 @@ Public Class frmPrincipal
     '        PrintLine(FileCls, "")
     '        PrintLine(FileCls, TAB(4), "'''<summary>")
     '        PrintLine(FileCls, TAB(4), "'''Obtiene o establece el contexto de la prueba que proporciona")
-    '        PrintLine(FileCls, TAB(4), "'''la información y funcionalidad para la ejecución de pruebas actual. ")
+    '        PrintLine(FileCls, TAB(4), "'''la informaciï¿½n y funcionalidad para la ejecuciï¿½n de pruebas actual. ")
     '        PrintLine(FileCls, TAB(4), "'''</summary>")
     '        PrintLine(FileCls, TAB(4), "Public Property TestContext() As TestContext")
     '        PrintLine(FileCls, TAB(8), "Get")
@@ -1530,22 +1530,22 @@ Public Class frmPrincipal
     '        PrintLine(FileCls, TAB(4), "'")
     '        PrintLine(FileCls, TAB(4), "'Puede utilizar los siguientes atributos adicionales mientras escribe sus pruebas: ")
     '        PrintLine(FileCls, TAB(4), "'")
-    '        PrintLine(FileCls, TAB(4), "'Use ClassInitialize para ejecutar código antes de ejecutar la primera prueba en la clase ")
+    '        PrintLine(FileCls, TAB(4), "'Use ClassInitialize para ejecutar cï¿½digo antes de ejecutar la primera prueba en la clase ")
     '        PrintLine(FileCls, TAB(4), "'<ClassInitialize()>  _")
     '        PrintLine(FileCls, TAB(4), "'Public Shared Sub MyClassInitialize(ByVal testContext As TestContext) ")
     '        PrintLine(FileCls, TAB(4), "'End Sub")
     '        PrintLine(FileCls, TAB(4), "'")
-    '        PrintLine(FileCls, TAB(4), "'Use ClassCleanup para ejecutar código después de haber ejecutado todas las pruebas en una clase")
+    '        PrintLine(FileCls, TAB(4), "'Use ClassCleanup para ejecutar cï¿½digo despuï¿½s de haber ejecutado todas las pruebas en una clase")
     '        PrintLine(FileCls, TAB(4), "'<ClassCleanup()>  _")
     '        PrintLine(FileCls, TAB(4), "'Public Shared Sub MyClassCleanup()")
     '        PrintLine(FileCls, TAB(4), "'End Sub")
     '        PrintLine(FileCls, TAB(4), "'")
-    '        PrintLine(FileCls, TAB(4), "'Use TestInitialize para ejecutar código antes de ejecutar cada prueba")
+    '        PrintLine(FileCls, TAB(4), "'Use TestInitialize para ejecutar cï¿½digo antes de ejecutar cada prueba")
     '        PrintLine(FileCls, TAB(4), "'<TestInitialize()>  _")
     '        PrintLine(FileCls, TAB(4), "'Public Sub MyTestInitialize()")
     '        PrintLine(FileCls, TAB(4), "'End Sub")
     '        PrintLine(FileCls, TAB(4), "'")
-    '        PrintLine(FileCls, TAB(4), "'Use TestCleanup para ejecutar código después de que se hayan ejecutado todas las pruebas")
+    '        PrintLine(FileCls, TAB(4), "'Use TestCleanup para ejecutar cï¿½digo despuï¿½s de que se hayan ejecutado todas las pruebas")
     '        PrintLine(FileCls, TAB(4), "'<TestCleanup()>  _")
     '        PrintLine(FileCls, TAB(4), "'Public Sub MyTestCleanup()")
     '        PrintLine(FileCls, TAB(4), "'End Sub")
@@ -1792,7 +1792,7 @@ Public Class frmPrincipal
     '                ' Creo el pie del get de la propiedad
     '                PrintLine(FileCls, TAB(9), "End Get")
 
-    '                ' Creo una línea divisoria (espacio en blanco)
+    '                ' Creo una lï¿½nea divisoria (espacio en blanco)
     '                '' PrintLine(FileCls, "")
 
     '                ' Creo la cabecera del set de la propiedad
@@ -1807,7 +1807,7 @@ Public Class frmPrincipal
     '                ' Creo el pie de la propiedad
     '                PrintLine(FileCls, TAB(5), "end property")
 
-    '                ' Creo una línea divisoria (espacio en blanco)
+    '                ' Creo una lï¿½nea divisoria (espacio en blanco)
     '                PrintLine(FileCls, "")
     '            End If
     '        Next
@@ -2120,7 +2120,7 @@ Public Class frmPrincipal
     '        PrintLine(FileCls, "")
 
     '        'consulta el archivo txt para importarlo
-    '        PrintLine(FileCls, TAB(5), "'importa los datos de una campaña desde el txt")
+    '        PrintLine(FileCls, TAB(5), "'importa los datos de una campaï¿½a desde el txt")
     '        PrintLine(FileCls, TAB(5), "Public Function Cargar_Archivo() As DataTable")
     '        PrintLine(FileCls, TAB(9), "Dim odt As New DataTable(" & """" & txtTabla.Text.Trim & """" & ")")
     '        PrintLine(FileCls, "")
@@ -2144,7 +2144,7 @@ Public Class frmPrincipal
     '        ' Comienzo a generar la clase
     '        PrintLine(FileCls, "End Class")
 
-    '        ' Cierro el PathCls de versión
+    '        ' Cierro el PathCls de versiï¿½n
     '        FileClose(FileCls)
 
     '    End If
@@ -2180,7 +2180,7 @@ Public Class frmPrincipal
     '    Dim FileInsert As Integer = FreeFile()
     '    Dim regInsert As regSistemaTabla
 
-    '    ' Abro un PathCls de texto (si el mismo existía se reempleza)
+    '    ' Abro un PathCls de texto (si el mismo existï¿½a se reempleza)
     '    FileOpen(FileInsert, PathInsert, OpenMode.Output)
     '    Dim Prefijo As String = "cop_"
 
@@ -2208,9 +2208,9 @@ Public Class frmPrincipal
     '        If regInsert.indice = 9 Or regInsert.indice = 1 Then
     '            PrintLine(FileInsert, TAB(5), "@" & regInsert.nombre & "    " & regInsert.tipo & "  output,")
     '        ElseIf Contador = NumeroFilas Then
-    '            PrintLine(FileInsert, TAB(5), "@" & regInsert.nombre & "    " & regInsert.tipo & "  " & regInsert.sptamaño)
+    '            PrintLine(FileInsert, TAB(5), "@" & regInsert.nombre & "    " & regInsert.tipo & "  " & regInsert.sptamanio)
     '        Else
-    '            PrintLine(FileInsert, TAB(5), "@" & regInsert.nombre & "    " & regInsert.tipo & "  " & regInsert.sptamaño & ",")
+    '            PrintLine(FileInsert, TAB(5), "@" & regInsert.nombre & "    " & regInsert.tipo & "  " & regInsert.sptamanio & ",")
     '        End If
     '        Contador = Contador + 1
     '    Next
@@ -2374,9 +2374,9 @@ Public Class frmPrincipal
     '        If regInsert.indice = 9 Or regInsert.indice = 1 Then
     '            PrintLine(FileInsert, TAB(5), "@" & regInsert.nombre & "    " & regInsert.tipo & "  output,")
     '        ElseIf Contador = NumeroFilas Then
-    '            PrintLine(FileInsert, TAB(5), "@" & regInsert.nombre & "    " & regInsert.tipo & "  " & regInsert.sptamaño)
+    '            PrintLine(FileInsert, TAB(5), "@" & regInsert.nombre & "    " & regInsert.tipo & "  " & regInsert.sptamanio)
     '        Else
-    '            PrintLine(FileInsert, TAB(5), "@" & regInsert.nombre & "    " & regInsert.tipo & "  " & regInsert.sptamaño & ",")
+    '            PrintLine(FileInsert, TAB(5), "@" & regInsert.nombre & "    " & regInsert.tipo & "  " & regInsert.sptamanio & ",")
     '        End If
     '        Contador = Contador + 1
     '    Next
@@ -2415,9 +2415,9 @@ Public Class frmPrincipal
     '        If regInsert.indice = 9 Or regInsert.indice = 1 Then
     '            'PrintLine(FileInsert, TAB(5), "@" & regInsert.nombre & "    " & regInsert.tipo & "  output,")
     '        ElseIf Contador = NumeroFilas Then
-    '            PrintLine(FileInsert, TAB(5), "@" & regInsert.nombre & "    " & regInsert.tipo & "  " & regInsert.sptamaño)
+    '            PrintLine(FileInsert, TAB(5), "@" & regInsert.nombre & "    " & regInsert.tipo & "  " & regInsert.sptamanio)
     '        Else
-    '            PrintLine(FileInsert, TAB(5), "@" & regInsert.nombre & "    " & regInsert.tipo & "  " & regInsert.sptamaño & ",")
+    '            PrintLine(FileInsert, TAB(5), "@" & regInsert.nombre & "    " & regInsert.tipo & "  " & regInsert.sptamanio & ",")
     '        End If
     '        Contador = Contador + 1
     '    Next
@@ -2635,7 +2635,7 @@ Public Class frmPrincipal
     '    ' Defino variables
     '    Dim FileFrm As Integer = FreeFile()
 
-    '    ' Abro un PathCls de texto (si el mismo existía se reempleza)
+    '    ' Abro un PathCls de texto (si el mismo existï¿½a se reempleza)
     '    FileOpen(FileInsert, PathFrm, OpenMode.Output)
 
     '    'definicion de variables
@@ -2797,7 +2797,7 @@ Public Class frmPrincipal
     '    ' Defino variables
     '    FileFrm = FreeFile()
 
-    '    ' Abro un PathCls de texto (si el mismo existía se reempleza)
+    '    ' Abro un PathCls de texto (si el mismo existï¿½a se reempleza)
     '    FileOpen(FileInsert, PathFrm, OpenMode.Output)
 
     '    'definicion de variables
@@ -2814,12 +2814,12 @@ Public Class frmPrincipal
     '    PrintLine(FileFrm, TAB(8), "MyBase.Dispose(disposing)")
     '    PrintLine(FileFrm, TAB(4), "End Sub")
     '    PrintLine(FileFrm, "")
-    '    PrintLine(FileFrm, TAB(4), "'Requerido por el Diseñador de Windows Forms")
+    '    PrintLine(FileFrm, TAB(4), "'Requerido por el Diseï¿½ador de Windows Forms")
     '    PrintLine(FileFrm, TAB(4), "Private components As System.ComponentModel.IContainer")
     '    PrintLine(FileFrm, "")
-    '    PrintLine(FileFrm, TAB(4), "'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento")
-    '    PrintLine(FileFrm, TAB(4), "'Se puede modificar usando el Diseñador de Windows Forms.")
-    '    PrintLine(FileFrm, TAB(4), "'No lo modifique con el editor de código.")
+    '    PrintLine(FileFrm, TAB(4), "'NOTA: el Diseï¿½ador de Windows Forms necesita el siguiente procedimiento")
+    '    PrintLine(FileFrm, TAB(4), "'Se puede modificar usando el Diseï¿½ador de Windows Forms.")
+    '    PrintLine(FileFrm, TAB(4), "'No lo modifique con el editor de cï¿½digo.")
     '    PrintLine(FileFrm, TAB(4), "<System.Diagnostics.DebuggerStepThrough()> _")
     '    PrintLine(FileFrm, TAB(4), "Private Sub InitializeComponent()")
     '    PrintLine(FileFrm, TAB(8), "Me.components = New System.ComponentModel.Container")
@@ -3088,7 +3088,7 @@ Public Class frmPrincipal
     '    Dim FileFrmDetalle As Integer = FreeFile()
     '    Dim regDetalle As regSistemaTabla
 
-    '    ' Abro un PathCls de texto (si el mismo existía se reempleza)
+    '    ' Abro un PathCls de texto (si el mismo existï¿½a se reempleza)
     '    FileOpen(FileFrmDetalle, PathFrmdetalle, OpenMode.Output)
 
 
@@ -3366,7 +3366,7 @@ Public Class frmPrincipal
     '    PrintLine(FileFrmDetalle, TAB(20), "MessageBox.Show(" & """" & "Sr. Usuario: Los Datos que Pretende Ingresar ya Fueron Cargados en el Sistema" & """" & ")")
     '    PrintLine(FileFrmDetalle, TAB(16), "Exit Sub")
     '    PrintLine(FileFrmDetalle, TAB(16), "ElseIf Bandera" & Me.txtTabla.Text & " = 2 Then")
-    '    PrintLine(FileCls, TAB(20), "If MessageBox.Show(" & """" & "Sr. Usuario: Los Datos que Desea Modificar ya Existen ¿Desea Reemplazarlos?" & """" & ", " & """" & "MODIFICAR" & """" & ", _")
+    '    PrintLine(FileCls, TAB(20), "If MessageBox.Show(" & """" & "Sr. Usuario: Los Datos que Desea Modificar ya Existen ï¿½Desea Reemplazarlos?" & """" & ", " & """" & "MODIFICAR" & """" & ", _")
     '    PrintLine(FileCls, TAB(24), "MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) _")
     '    PrintLine(FileCls, TAB(24), "= Windows.Forms.DialogResult.No Then")
     '    PrintLine(FileCls, TAB(24), "Exit Sub")
@@ -3624,7 +3624,7 @@ Public Class frmPrincipal
 
     '        FileFrmDetalle = FreeFile()
 
-    '        ' Abro un PathCls de texto (si el mismo existía se reempleza)
+    '        ' Abro un PathCls de texto (si el mismo existï¿½a se reempleza)
     '        FileOpen(FileFrmDetalle, PathFrmdetalle, OpenMode.Output)
     '        PrintLine(FileFrmDetalle, TAB(0), "<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _")
     '        PrintLine(FileFrmDetalle, TAB(0), "Partial Class frmDetalle" & Me.txtTabla.Text)
@@ -3639,12 +3639,12 @@ Public Class frmPrincipal
     '        PrintLine(FileFrmDetalle, TAB(8), "MyBase.Dispose(disposing)")
     '        PrintLine(FileFrmDetalle, TAB(4), "End Sub")
     '        PrintLine(FileFrmDetalle, "")
-    '        PrintLine(FileFrmDetalle, TAB(4), "'Requerido por el Diseñador de Windows Forms")
+    '        PrintLine(FileFrmDetalle, TAB(4), "'Requerido por el Diseï¿½ador de Windows Forms")
     '        PrintLine(FileFrmDetalle, TAB(4), "Private components As System.ComponentModel.IContainer")
     '        PrintLine(FileFrmDetalle, "")
-    '        PrintLine(FileFrmDetalle, TAB(4), "'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento")
-    '        PrintLine(FileFrmDetalle, TAB(4), "'Se puede modificar usando el Diseñador de Windows Forms.")
-    '        PrintLine(FileFrmDetalle, TAB(4), "'No lo modifique con el editor de código.")
+    '        PrintLine(FileFrmDetalle, TAB(4), "'NOTA: el Diseï¿½ador de Windows Forms necesita el siguiente procedimiento")
+    '        PrintLine(FileFrmDetalle, TAB(4), "'Se puede modificar usando el Diseï¿½ador de Windows Forms.")
+    '        PrintLine(FileFrmDetalle, TAB(4), "'No lo modifique con el editor de cï¿½digo.")
     '        PrintLine(FileFrmDetalle, TAB(4), "<System.Diagnostics.DebuggerStepThrough()> _")
     '        PrintLine(FileFrmDetalle, TAB(4), "Private Sub InitializeComponent()")
     '        PrintLine(FileFrmDetalle, TAB(8), "Me.components = New System.ComponentModel.Container")
@@ -3771,7 +3771,7 @@ Public Class frmPrincipal
 
     '        FileFrmDetalle = FreeFile()
 
-    '        ' Abro un PathCls de texto (si el mismo existía se reempleza)
+    '        ' Abro un PathCls de texto (si el mismo existï¿½a se reempleza)
     '        FileOpen(FileFrmDetalle, PathFrmdetalle, OpenMode.Output)
 
     '        PrintLine(FileFrmDetalle, TAB(0), "<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _")
@@ -3787,12 +3787,12 @@ Public Class frmPrincipal
     '        PrintLine(FileFrmDetalle, TAB(8), "MyBase.Dispose(disposing)")
     '        PrintLine(FileFrmDetalle, TAB(4), "End Sub")
     '        PrintLine(FileFrmDetalle, "")
-    '        PrintLine(FileFrmDetalle, TAB(4), "'Requerido por el Diseñador de Windows Forms")
+    '        PrintLine(FileFrmDetalle, TAB(4), "'Requerido por el Diseï¿½ador de Windows Forms")
     '        PrintLine(FileFrmDetalle, TAB(4), "Private components As System.ComponentModel.IContainer")
     '        PrintLine(FileFrmDetalle, "")
-    '        PrintLine(FileFrmDetalle, TAB(4), "'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento")
-    '        PrintLine(FileFrmDetalle, TAB(4), "'Se puede modificar usando el Diseñador de Windows Forms.")
-    '        PrintLine(FileFrmDetalle, TAB(4), "'No lo modifique con el editor de código.")
+    '        PrintLine(FileFrmDetalle, TAB(4), "'NOTA: el Diseï¿½ador de Windows Forms necesita el siguiente procedimiento")
+    '        PrintLine(FileFrmDetalle, TAB(4), "'Se puede modificar usando el Diseï¿½ador de Windows Forms.")
+    '        PrintLine(FileFrmDetalle, TAB(4), "'No lo modifique con el editor de cï¿½digo.")
     '        PrintLine(FileFrmDetalle, TAB(4), "<System.Diagnostics.DebuggerStepThrough()> _")
     '        PrintLine(FileFrmDetalle, TAB(4), "Private Sub InitializeComponent()")
     '        PrintLine(FileFrmDetalle, TAB(8), "Me.components = New System.ComponentModel.Container")
@@ -4024,7 +4024,7 @@ Public Class frmPrincipal
 
         Catch ex As SqlException
             BanderaSP = 1
-            MessageBox.Show("Error Nº: " & ex.Number & " En el SP: " & ex.Procedure & " Linea Nº: " & ex.LineNumber, "MENSAJE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Error Nï¿½: " & ex.Number & " En el SP: " & ex.Procedure & " Linea Nï¿½: " & ex.LineNumber, "MENSAJE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Exit Try
         End Try
     End Sub
@@ -4054,7 +4054,7 @@ Public Class frmPrincipal
         If BanderaSP = 0 Then
             MessageBox.Show("Los Comandos se Ejecutaron Correctamente", "MENSAJE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         Else
-            MessageBox.Show("Se ha Producido un Error en la Ejecución ", "MENSAJE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Se ha Producido un Error en la Ejecuciï¿½n ", "MENSAJE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         End If
     End Sub
 
@@ -4181,7 +4181,7 @@ Public Class frmPrincipal
     End Sub
 
     Private Sub btnCancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        ' Finalizo la ejecución
+        ' Finalizo la ejecuciï¿½n
         Me.Close()
         Application.Exit()
     End Sub
@@ -4194,7 +4194,7 @@ Public Class frmPrincipal
         Dim cbSistema As New SqlCommandBuilder(da)
         Dim dt As New DataTable
         da.Fill(dt)
-        ' Solicito confirmación antes de crear todas las tablas
+        ' Solicito confirmaciï¿½n antes de crear todas las tablas
         If MessageBox.Show("Desea Crear los SP Para Todas las Tablas de la Base de Datos Seleccionada ?", "CONFIRMACION", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) = Windows.Forms.DialogResult.Yes Then
             Dim Indice As Integer = 0
             For Each row As DataRow In dt.Rows
@@ -4221,7 +4221,7 @@ Public Class frmPrincipal
         If BanderaSP = 0 Then
             MessageBox.Show("Los Comandos se Ejecutaron Correctamente", "MENSAJE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         Else
-            MessageBox.Show("Se ha Producido un Error en la Ejecución ", "MENSAJE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Se ha Producido un Error en la Ejecuciï¿½n ", "MENSAJE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         End If
     End Sub
 
@@ -4245,7 +4245,7 @@ Public Class frmPrincipal
     Private Sub btnNulo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnNulo.Click
         ' Verifico si se trata de una o todas las tablas
         If Not chkTodasLasTablas.Checked Then
-            ' Solicito confirmación antes de crear la clase
+            ' Solicito confirmaciï¿½n antes de crear la clase
             If MessageBox.Show("Desea Crear el Registro nulo '" & txtClase.Text & "' Para la Tabla '" & txtTabla.Text & "' ?", "CONFIRMACION", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = Windows.Forms.DialogResult.Yes Then
                 ' Cargo la estructura de la tabla en un array "modular"
                 Call Cargar(txtCadena.Text, txtTabla.Text)
@@ -4254,7 +4254,7 @@ Public Class frmPrincipal
                 Call GenerarClaseInsert(txtArchivo.Text, txtClase.Text)
 
                 ' Indico que se ha generado la clase
-                MessageBox.Show("Se Generó la Clase '" & txtClase.Text & "' en el Archivo '" & txtArchivo.Text & "' de la Tabla '" & txtTabla.Text & "'." & Chr(13) & Chr(13) & "El Archivo se Guardó en C:\." & Chr(13) & Chr(13) & "Copiar la Clase en el Proyecto y Agregarla con --> Agregar elemento existente", "GENERACION DE CLASES", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Se Generï¿½ la Clase '" & txtClase.Text & "' en el Archivo '" & txtArchivo.Text & "' de la Tabla '" & txtTabla.Text & "'." & Chr(13) & Chr(13) & "El Archivo se Guardï¿½ en C:\." & Chr(13) & Chr(13) & "Copiar la Clase en el Proyecto y Agregarla con --> Agregar elemento existente", "GENERACION DE CLASES", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Me.btnSP.Enabled = True
             End If
         Else
@@ -4265,7 +4265,7 @@ Public Class frmPrincipal
             Dim cbSistema As New SqlCommandBuilder(da)
             Dim dt As New DataTable
             da.Fill(dt)
-            ' Solicito confirmación antes de crear todas las tablas
+            ' Solicito confirmaciï¿½n antes de crear todas las tablas
             If MessageBox.Show("Desea Crear los Registros nulos Para Todas las Tablas de la Base de Datos Seleccionada ?", "CONFIRMACION", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) = Windows.Forms.DialogResult.Yes Then
                 Me.ProgressBar1.Value = Me.ProgressBar1.Minimum
                 Me.ProgressBar1.Maximum = dt.Rows.Count - 1
@@ -4283,7 +4283,7 @@ Public Class frmPrincipal
 
                     indice = indice + 1
                 Next
-                MessageBox.Show("Se Generó la Clase Para Todas las Tablas de la Base de Datos." & Chr(13) & Chr(13) & "Los Archivos se Guardaron en C:\." & Chr(13) & Chr(13) & "Copiar la Clase en el Proyecto y Agregarla con --> Agregar elemento existente", "GENERACION DE CLASES", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Se Generï¿½ la Clase Para Todas las Tablas de la Base de Datos." & Chr(13) & Chr(13) & "Los Archivos se Guardaron en C:\." & Chr(13) & Chr(13) & "Copiar la Clase en el Proyecto y Agregarla con --> Agregar elemento existente", "GENERACION DE CLASES", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Me.btnTodoSp.Enabled = True
             End If
         End If
@@ -4293,7 +4293,7 @@ Public Class frmPrincipal
     Private Sub btnTruncate_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnTruncate.Click
         ' Verifico si se trata de una o todas las tablas
         If Not chkTodasLasTablas.Checked Then
-            ' Solicito confirmación antes de crear la clase
+            ' Solicito confirmaciï¿½n antes de crear la clase
             If MessageBox.Show("Desea Crear el Truncate '" & txtClase.Text & "' Para la Tabla '" & txtTabla.Text & "' ?", "CONFIRMACION", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = Windows.Forms.DialogResult.Yes Then
                 ' Cargo la estructura de la tabla en un array "modular"
                 Call Cargar(txtCadena.Text, txtTabla.Text)
@@ -4302,7 +4302,7 @@ Public Class frmPrincipal
                 Call generarClaseTruncate(txtArchivo.Text, txtClase.Text)
 
                 ' Indico que se ha generado la clase
-                MessageBox.Show("Se Generó el Truncate '" & txtClase.Text & "' en el Archivo '" & "Truncate.sql" & "' de la Tabla '" & txtTabla.Text & "'." & Chr(13) & Chr(13) & "El Archivo se Guardó en C:\." & Chr(13) & Chr(13) & "Ejecutar el Script", "GENERACION DE SCRIPT", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Se Generï¿½ el Truncate '" & txtClase.Text & "' en el Archivo '" & "Truncate.sql" & "' de la Tabla '" & txtTabla.Text & "'." & Chr(13) & Chr(13) & "El Archivo se Guardï¿½ en C:\." & Chr(13) & Chr(13) & "Ejecutar el Script", "GENERACION DE SCRIPT", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Me.btnSP.Enabled = True
             End If
         Else
@@ -4313,7 +4313,7 @@ Public Class frmPrincipal
             Dim cbSistema As New SqlCommandBuilder(da)
             Dim dt As New DataTable
             da.Fill(dt)
-            ' Solicito confirmación antes de crear todas las tablas
+            ' Solicito confirmaciï¿½n antes de crear todas las tablas
             If MessageBox.Show("Desea Crear los Truncates Para Todas las Tablas de la Base de Datos Seleccionada ?", "CONFIRMACION", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) = Windows.Forms.DialogResult.Yes Then
                 Me.ProgressBar1.Value = Me.ProgressBar1.Minimum
                 Me.ProgressBar1.Maximum = dt.Rows.Count - 1
@@ -4331,7 +4331,7 @@ Public Class frmPrincipal
 
                     indice = indice + 1
                 Next
-                MessageBox.Show("Se Generó el Truncate Para Todas las Tablas de la Base de Datos." & Chr(13) & Chr(13) & "Los Archivos se Guardaron en C:\." & Chr(13) & Chr(13) & "Ejecutar el Script", "GENERACION DE SCRIPT", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Se Generï¿½ el Truncate Para Todas las Tablas de la Base de Datos." & Chr(13) & Chr(13) & "Los Archivos se Guardaron en C:\." & Chr(13) & Chr(13) & "Ejecutar el Script", "GENERACION DE SCRIPT", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Me.btnTodoSp.Enabled = True
             End If
         End If
@@ -4341,7 +4341,7 @@ Public Class frmPrincipal
     Private Sub btnIdSuplente_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnIdSuplente.Click
         ' Verifico si se trata de una o todas las tablas
         If Not chkTodasLasTablas.Checked Then
-            ' Solicito confirmación antes de crear la clase
+            ' Solicito confirmaciï¿½n antes de crear la clase
             If MessageBox.Show("Desea Crear la Clave Suplente '" & txtClase.Text & "' Para la Tabla '" & txtTabla.Text & "' ?", "CONFIRMACION", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = Windows.Forms.DialogResult.Yes Then
                 ' Cargo la estructura de la tabla en un array "modular"
                 Call Cargar(txtCadena.Text, txtTabla.Text)
@@ -4350,7 +4350,7 @@ Public Class frmPrincipal
                 Call generarClaseKey(txtArchivo.Text, txtClase.Text)
 
                 ' Indico que se ha generado la clase
-                MessageBox.Show("Se Generó la Clave Suplente '" & txtClase.Text & "' en el Archivo '" & "Clave_suplente.sql" & "' de la Tabla '" & txtTabla.Text & "'." & Chr(13) & Chr(13) & "El Archivo se Guardó en C:\." & Chr(13) & Chr(13) & "Ejecutar con SQL", "GENERACION DE SCRIPTS", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Se Generï¿½ la Clave Suplente '" & txtClase.Text & "' en el Archivo '" & "Clave_suplente.sql" & "' de la Tabla '" & txtTabla.Text & "'." & Chr(13) & Chr(13) & "El Archivo se Guardï¿½ en C:\." & Chr(13) & Chr(13) & "Ejecutar con SQL", "GENERACION DE SCRIPTS", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Me.btnSP.Enabled = True
             End If
         Else
@@ -4361,7 +4361,7 @@ Public Class frmPrincipal
             Dim cbSistema As New SqlCommandBuilder(da)
             Dim dt As New DataTable
             da.Fill(dt)
-            ' Solicito confirmación antes de crear todas las tablas
+            ' Solicito confirmaciï¿½n antes de crear todas las tablas
             If MessageBox.Show("Desea Crear las Claves Suplentes Para Todas las Tablas de la Base de Datos Seleccionada ?", "CONFIRMACION", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) = Windows.Forms.DialogResult.Yes Then
                 Me.ProgressBar1.Value = Me.ProgressBar1.Minimum
                 Me.ProgressBar1.Maximum = dt.Rows.Count - 1
@@ -4380,7 +4380,7 @@ Public Class frmPrincipal
 
                     indice = indice + 1
                 Next
-                MessageBox.Show("Se Generó El Script Para Todas las Tablas de la Base de Datos." & Chr(13) & Chr(13) & "Los Archivos se Guardaron en C:\." & Chr(13) & Chr(13) & "Copiar la Clase en el Proyecto y Agregarla con --> Agregar elemento existente", "GENERACION DE CLASES", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Se Generï¿½ El Script Para Todas las Tablas de la Base de Datos." & Chr(13) & Chr(13) & "Los Archivos se Guardaron en C:\." & Chr(13) & Chr(13) & "Copiar la Clase en el Proyecto y Agregarla con --> Agregar elemento existente", "GENERACION DE CLASES", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Me.btnTodoSp.Enabled = True
             End If
         End If
@@ -4390,7 +4390,7 @@ Public Class frmPrincipal
     Private Sub btnTablaPocket_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnTablaPocket.Click
         ' Verifico si se trata de una o todas las tablas
         If Not chkTodasLasTablas.Checked Then
-            ' Solicito confirmación antes de crear la clase
+            ' Solicito confirmaciï¿½n antes de crear la clase
             If MessageBox.Show("Desea Crear el Truncate '" & txtClase.Text & "' Para la Tabla '" & txtTabla.Text & "' ?", "CONFIRMACION", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = Windows.Forms.DialogResult.Yes Then
                 ' Cargo la estructura de la tabla en un array "modular"
                 Call Cargar(txtCadena.Text, txtTabla.Text)
@@ -4399,7 +4399,7 @@ Public Class frmPrincipal
                 Call generarTablaPocket(txtArchivo.Text, txtClase.Text)
 
                 ' Indico que se ha generado la clase
-                MessageBox.Show("Se Generó la Clase '" & txtClase.Text & "' en el Archivo '" & txtArchivo.Text & "' de la Tabla '" & txtTabla.Text & "'." & Chr(13) & Chr(13) & "El Archivo se Guardó en C:\." & Chr(13) & Chr(13) & "Copiar la Clase en el Proyecto y Agregarla con --> Agregar elemento existente", "GENERACION DE CLASES", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Se Generï¿½ la Clase '" & txtClase.Text & "' en el Archivo '" & txtArchivo.Text & "' de la Tabla '" & txtTabla.Text & "'." & Chr(13) & Chr(13) & "El Archivo se Guardï¿½ en C:\." & Chr(13) & Chr(13) & "Copiar la Clase en el Proyecto y Agregarla con --> Agregar elemento existente", "GENERACION DE CLASES", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Me.btnSP.Enabled = True
             End If
         Else
@@ -4410,7 +4410,7 @@ Public Class frmPrincipal
             Dim cbSistema As New SqlCommandBuilder(da)
             Dim dt As New DataTable
             da.Fill(dt)
-            ' Solicito confirmación antes de crear todas las tablas
+            ' Solicito confirmaciï¿½n antes de crear todas las tablas
             If MessageBox.Show("Desea Crear los Truncates Para Todas las Tablas de la Base de Datos Seleccionada ?", "CONFIRMACION", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) = Windows.Forms.DialogResult.Yes Then
                 Me.ProgressBar1.Value = Me.ProgressBar1.Minimum
                 Me.ProgressBar1.Maximum = dt.Rows.Count - 1
@@ -4429,7 +4429,7 @@ Public Class frmPrincipal
 
                     indice = indice + 1
                 Next
-                MessageBox.Show("Se Generó la Clase Para Todas las Tablas de la Base de Datos." & Chr(13) & Chr(13) & "Los Archivos se Guardaron en C:\." & Chr(13) & Chr(13) & "Copiar la Clase en el Proyecto y Agregarla con --> Agregar elemento existente", "GENERACION DE CLASES", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Se Generï¿½ la Clase Para Todas las Tablas de la Base de Datos." & Chr(13) & Chr(13) & "Los Archivos se Guardaron en C:\." & Chr(13) & Chr(13) & "Copiar la Clase en el Proyecto y Agregarla con --> Agregar elemento existente", "GENERACION DE CLASES", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Me.btnTodoSp.Enabled = True
             End If
         End If
@@ -4439,7 +4439,7 @@ Public Class frmPrincipal
     Private Sub btnSchema_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSchema.Click
         ' Verifico si se trata de una o todas las tablas
         If Not chkTodasLasTablas.Checked Then
-            ' Solicito confirmación antes de crear la clase
+            ' Solicito confirmaciï¿½n antes de crear la clase
             If MessageBox.Show("Desea Crear la Clave Suplente '" & txtClase.Text & "' Para la Tabla '" & txtTabla.Text & "' ?", "CONFIRMACION", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = Windows.Forms.DialogResult.Yes Then
                 ' Cargo la estructura de la tabla en un array "modular"
                 Call Cargar(txtCadena.Text, txtTabla.Text)
@@ -4448,7 +4448,7 @@ Public Class frmPrincipal
                 Call generarSchema(txtArchivo.Text, txtClase.Text)
 
                 ' Indico que se ha generado la clase
-                MessageBox.Show("Se Generó la Clave Suplente '" & txtClase.Text & "' en el Archivo '" & "Clave_suplente.sql" & "' de la Tabla '" & txtTabla.Text & "'." & Chr(13) & Chr(13) & "El Archivo se Guardó en C:\." & Chr(13) & Chr(13) & "Ejecutar con SQL", "GENERACION DE SCRIPTS", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Se Generï¿½ la Clave Suplente '" & txtClase.Text & "' en el Archivo '" & "Clave_suplente.sql" & "' de la Tabla '" & txtTabla.Text & "'." & Chr(13) & Chr(13) & "El Archivo se Guardï¿½ en C:\." & Chr(13) & Chr(13) & "Ejecutar con SQL", "GENERACION DE SCRIPTS", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Me.btnSP.Enabled = True
             End If
         Else
@@ -4459,7 +4459,7 @@ Public Class frmPrincipal
             Dim cbSistema As New SqlCommandBuilder(da)
             Dim dt As New DataTable
             da.Fill(dt)
-            ' Solicito confirmación antes de crear todas las tablas
+            ' Solicito confirmaciï¿½n antes de crear todas las tablas
             If MessageBox.Show("Desea Crear las Claves Suplentes Para Todas las Tablas de la Base de Datos Seleccionada ?", "CONFIRMACION", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) = Windows.Forms.DialogResult.Yes Then
                 Me.ProgressBar1.Value = Me.ProgressBar1.Minimum
                 Me.ProgressBar1.Maximum = dt.Rows.Count - 1
@@ -4478,7 +4478,7 @@ Public Class frmPrincipal
 
                     indice = indice + 1
                 Next
-                MessageBox.Show("Se Generó El Script Para Todas las Tablas de la Base de Datos." & Chr(13) & Chr(13) & "Los Archivos se Guardaron en C:\." & Chr(13) & Chr(13) & "Copiar la Clase en el Proyecto y Agregarla con --> Agregar elemento existente", "GENERACION DE CLASES", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Se Generï¿½ El Script Para Todas las Tablas de la Base de Datos." & Chr(13) & Chr(13) & "Los Archivos se Guardaron en C:\." & Chr(13) & Chr(13) & "Copiar la Clase en el Proyecto y Agregarla con --> Agregar elemento existente", "GENERACION DE CLASES", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Me.btnTodoSp.Enabled = True
             End If
         End If
@@ -4488,7 +4488,7 @@ Public Class frmPrincipal
     Private Sub btnExist_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnExist.Click
         ' Verifico si se trata de una o todas las tablas
         If Not chkTodasLasTablas.Checked Then
-            ' Solicito confirmación antes de crear la clase
+            ' Solicito confirmaciï¿½n antes de crear la clase
             If MessageBox.Show("Desea Crear el Exist '" & txtClase.Text & "' Para la Tabla '" & txtTabla.Text & "' ?", "CONFIRMACION", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = Windows.Forms.DialogResult.Yes Then
                 ' Cargo la estructura de la tabla en un array "modular"
                 Call Cargar(txtCadena.Text, txtTabla.Text)
@@ -4497,7 +4497,7 @@ Public Class frmPrincipal
                 Call GenerarClaseExist(txtArchivo.Text, txtClase.Text)
 
                 ' Indico que se ha generado la clase
-                MessageBox.Show("Se Generó el Exist '" & txtClase.Text & "' en el Archivo '" & "Exist.sql" & "' de la Tabla '" & txtTabla.Text & "'." & Chr(13) & Chr(13) & "El Archivo se Guardó en C:\." & Chr(13) & Chr(13) & "Ejecutar el Script", "GENERACION DE SCRIPT", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Se Generï¿½ el Exist '" & txtClase.Text & "' en el Archivo '" & "Exist.sql" & "' de la Tabla '" & txtTabla.Text & "'." & Chr(13) & Chr(13) & "El Archivo se Guardï¿½ en C:\." & Chr(13) & Chr(13) & "Ejecutar el Script", "GENERACION DE SCRIPT", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Me.btnSP.Enabled = True
             End If
         Else
@@ -4508,7 +4508,7 @@ Public Class frmPrincipal
             Dim cbSistema As New SqlCommandBuilder(da)
             Dim dt As New DataTable
             da.Fill(dt)
-            ' Solicito confirmación antes de crear todas las tablas
+            ' Solicito confirmaciï¿½n antes de crear todas las tablas
             If MessageBox.Show("Desea Crear los Exist Para Todas las Tablas de la Base de Datos Seleccionada ?", "CONFIRMACION", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) = Windows.Forms.DialogResult.Yes Then
                 Me.ProgressBar1.Value = Me.ProgressBar1.Minimum
                 Me.ProgressBar1.Maximum = dt.Rows.Count - 1
@@ -4526,7 +4526,7 @@ Public Class frmPrincipal
 
                     indice = indice + 1
                 Next
-                MessageBox.Show("Se Generó el Exist Para Todas las Tablas de la Base de Datos." & Chr(13) & Chr(13) & "Los Archivos se Guardaron en C:\." & Chr(13) & Chr(13) & "Ejecutar el Script", "GENERACION DE SCRIPT", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Se Generï¿½ el Exist Para Todas las Tablas de la Base de Datos." & Chr(13) & Chr(13) & "Los Archivos se Guardaron en C:\." & Chr(13) & Chr(13) & "Ejecutar el Script", "GENERACION DE SCRIPT", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Me.btnTodoSp.Enabled = True
             End If
         End If
@@ -4630,7 +4630,7 @@ Public Class frmPrincipal
     Private Sub btnSincro_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSincro.Click
         ' Verifico si se trata de una o todas las tablas
         If Not chkTodasLasTablas.Checked Then
-            ' Solicito confirmación antes de crear la clase
+            ' Solicito confirmaciï¿½n antes de crear la clase
             If MessageBox.Show("Desea Crear el Sincro '" & txtClase.Text & "' Para la Tabla '" & txtTabla.Text & "' ?", "CONFIRMACION", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = Windows.Forms.DialogResult.Yes Then
                 ' Cargo la estructura de la tabla en un array "modular"
                 Call Cargar(txtCadena.Text, txtTabla.Text)
@@ -4639,7 +4639,7 @@ Public Class frmPrincipal
                 Call generarClaseSincro(txtArchivo.Text, txtClase.Text)
 
                 ' Indico que se ha generado la clase
-                MessageBox.Show("Se Generó el Sincro '" & txtClase.Text & "' en el Archivo '" & "Truncate.sql" & "' de la Tabla '" & txtTabla.Text & "'." & Chr(13) & Chr(13) & "El Archivo se Guardó en C:\." & Chr(13) & Chr(13) & "Ejecutar el Script", "GENERACION DE SCRIPT", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Se Generï¿½ el Sincro '" & txtClase.Text & "' en el Archivo '" & "Truncate.sql" & "' de la Tabla '" & txtTabla.Text & "'." & Chr(13) & Chr(13) & "El Archivo se Guardï¿½ en C:\." & Chr(13) & Chr(13) & "Ejecutar el Script", "GENERACION DE SCRIPT", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Me.btnSP.Enabled = True
             End If
         Else
@@ -4650,7 +4650,7 @@ Public Class frmPrincipal
             Dim cbSistema As New SqlCommandBuilder(da)
             Dim dt As New DataTable
             da.Fill(dt)
-            ' Solicito confirmación antes de crear todas las tablas
+            ' Solicito confirmaciï¿½n antes de crear todas las tablas
             If MessageBox.Show("Desea Crear los Sincro Para Todas las Tablas de la Base de Datos Seleccionada ?", "CONFIRMACION", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) = Windows.Forms.DialogResult.Yes Then
                 Me.ProgressBar1.Value = Me.ProgressBar1.Minimum
                 Me.ProgressBar1.Maximum = dt.Rows.Count - 1
@@ -4668,7 +4668,7 @@ Public Class frmPrincipal
 
                     indice = indice + 1
                 Next
-                MessageBox.Show("Se Generó el Sincro Para Todas las Tablas de la Base de Datos." & Chr(13) & Chr(13) & "Los Archivos se Guardaron en C:\." & Chr(13) & Chr(13) & "Ejecutar el Script", "GENERACION DE SCRIPT", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Se Generï¿½ el Sincro Para Todas las Tablas de la Base de Datos." & Chr(13) & Chr(13) & "Los Archivos se Guardaron en C:\." & Chr(13) & Chr(13) & "Ejecutar el Script", "GENERACION DE SCRIPT", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Me.btnTodoSp.Enabled = True
             End If
         End If
@@ -4727,7 +4727,7 @@ Public Class frmPrincipal
 
         ' Verifico si se trata de una o todas las tablas
         If Not chkTodasLasTablas.Checked Then
-            ' Solicito confirmación antes de crear la clase
+            ' Solicito confirmaciï¿½n antes de crear la clase
             If MessageBox.Show("Desea Crear la Clase '" & txtClase.Text & "' Para la Tabla '" & txtTabla.Text & "' ?", "CONFIRMACION", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = Windows.Forms.DialogResult.Yes Then
                 ' Cargo la estructura de la tabla en un array "modular"
                 Call Cargar(txtCadena.Text, txtTabla.Text)
@@ -4760,7 +4760,7 @@ Public Class frmPrincipal
                 ' oClase.ClaseAgregada(Me.txtPath.Text, Me.txtTabla.Text)
 
                 ' Indico que se ha generado la clase
-                MessageBox.Show("Se Generó la Clase '" & txtClase.Text & "' en el Archivo '" & txtArchivo.Text & "' de la Tabla '" & txtTabla.Text & "'." & Chr(13) & Chr(13) & "El Archivo se Guardó en C:\." & Chr(13) & Chr(13) & "Copiar la Clase en el Proyecto y Agregarla con --> Agregar elemento existente", "GENERACION DE CLASES", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Se Generï¿½ la Clase '" & txtClase.Text & "' en el Archivo '" & txtArchivo.Text & "' de la Tabla '" & txtTabla.Text & "'." & Chr(13) & Chr(13) & "El Archivo se Guardï¿½ en C:\." & Chr(13) & Chr(13) & "Copiar la Clase en el Proyecto y Agregarla con --> Agregar elemento existente", "GENERACION DE CLASES", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 '  Me.btnSP2.Enabled = True
             End If
         Else
@@ -4771,7 +4771,7 @@ Public Class frmPrincipal
             Dim cbSistema As New SqlCommandBuilder(da)
             Dim dt As New DataTable
             da.Fill(dt)
-            ' Solicito confirmación antes de crear todas las tablas
+            ' Solicito confirmaciï¿½n antes de crear todas las tablas
             If MessageBox.Show("Desea las Clases Para Todas las Tablas de la Base de Datos Seleccionada ?", "CONFIRMACION", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) = Windows.Forms.DialogResult.Yes Then
                 Me.ProgressBar1.Value = Me.ProgressBar1.Minimum
                 Me.ProgressBar1.Maximum = dt.Rows.Count - 1
@@ -4814,7 +4814,7 @@ Public Class frmPrincipal
 
                     indice = indice + 1
                 Next
-                MessageBox.Show("Se Generó la Clase Para Todas las Tablas de la Base de Datos." & Chr(13) & Chr(13) & "Los Archivos se Guardaron en C:\." & Chr(13) & Chr(13) & "Copiar la Clase en el Proyecto y Agregarla con --> Agregar elemento existente", "GENERACION DE CLASES", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Se Generï¿½ la Clase Para Todas las Tablas de la Base de Datos." & Chr(13) & Chr(13) & "Los Archivos se Guardaron en C:\." & Chr(13) & Chr(13) & "Copiar la Clase en el Proyecto y Agregarla con --> Agregar elemento existente", "GENERACION DE CLASES", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 '     Me.btnTodoSP2.Enabled = True
             End If
         End If
@@ -4836,7 +4836,7 @@ Public Class frmPrincipal
         If BanderaSP = 0 Then
             MessageBox.Show("Los Comandos se Ejecutaron Correctamente", "MENSAJE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         Else
-            MessageBox.Show("Se ha Producido un Error en la Ejecución ", "MENSAJE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Se ha Producido un Error en la Ejecuciï¿½n ", "MENSAJE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         End If
     End Sub
 
@@ -4848,7 +4848,7 @@ Public Class frmPrincipal
         Dim cbSistema As New SqlCommandBuilder(da)
         Dim dt As New DataTable
         da.Fill(dt)
-        ' Solicito confirmación antes de crear todas las tablas
+        ' Solicito confirmaciï¿½n antes de crear todas las tablas
         If MessageBox.Show("Desea Crear los SP Para Todas las Tablas de la Base de Datos Seleccionada ?", "CONFIRMACION", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) = Windows.Forms.DialogResult.Yes Then
             Dim Indice As Integer = 0
             For Each row As DataRow In dt.Rows
@@ -4875,7 +4875,7 @@ Public Class frmPrincipal
         If BanderaSP = 0 Then
             MessageBox.Show("Los Comandos se Ejecutaron Correctamente", "MENSAJE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         Else
-            MessageBox.Show("Se ha Producido un Error en la Ejecución ", "MENSAJE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Se ha Producido un Error en la Ejecuciï¿½n ", "MENSAJE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         End If
     End Sub
 
@@ -4905,7 +4905,7 @@ Public Class frmPrincipal
     '    Dim idTabla As String
     '    Dim idParametro As String
 
-    '    ' Abro un PathCls de texto (si el mismo existía se reempleza)
+    '    ' Abro un PathCls de texto (si el mismo existï¿½a se reempleza)
     '    FileOpen(FileCls, PathCls, OpenMode.Output)
 
     '    'CODIGO GENERADO PARA TRABAJAR CON SERVIDORES
@@ -5346,7 +5346,7 @@ Public Class frmPrincipal
     '    PrintLine(FileCls, "")
 
     '    'consulta el archivo txt para importarlo
-    '    PrintLine(FileCls, TAB(5), "'importa los datos de una campaña desde el txt")
+    '    PrintLine(FileCls, TAB(5), "'importa los datos de una campaï¿½a desde el txt")
     '    PrintLine(FileCls, TAB(5), "Public Function Cargar_Archivo(ByVal path As String) As DataTable")
     '    PrintLine(FileCls, TAB(9), "Dim odt As New DataTable(" & """" & txtTabla.Text.Trim & """" & ")")
     '    PrintLine(FileCls, "")
@@ -5384,7 +5384,7 @@ Public Class frmPrincipal
     '    ' Comienzo a generar la clase
     '    PrintLine(FileCls, "End Class")
 
-    '    ' Cierro el PathCls de versión
+    '    ' Cierro el PathCls de versiï¿½n
     '    FileClose(FileCls)
 
 
@@ -5399,7 +5399,7 @@ Public Class frmPrincipal
     '        PathCls = Me.txtPath.Text & "\cls" & Me.txtTabla.Text & ".vb"
     '    End If
 
-    '    'Abro un PathCls de texto (si el mismo existía se reempleza)
+    '    'Abro un PathCls de texto (si el mismo existï¿½a se reempleza)
     '    FileOpen(FileCls, PathCls, OpenMode.Output)
 
     '    'importo las referencias
@@ -5431,7 +5431,7 @@ Public Class frmPrincipal
 
     '    PrintLine(FileCls, "End Class")
 
-    '    ' Cierro el PathCls de versión
+    '    ' Cierro el PathCls de versiï¿½n
     '    FileClose(FileCls)
 
 
@@ -5452,7 +5452,7 @@ Public Class frmPrincipal
     '            PathCls = Me.txtPath.Text & "\" & Me.txtTabla.Text
     '        End If
 
-    '        'Abro un PathCls de texto (si el mismo existía se reempleza)
+    '        'Abro un PathCls de texto (si el mismo existï¿½a se reempleza)
     '        FileOpen(FileCls, PathCls, OpenMode.Output)
 
     '        PrintLine(FileCls, TAB(0), "Imports System.Data")
@@ -5475,7 +5475,7 @@ Public Class frmPrincipal
     '        PrintLine(FileCls, "")
     '        PrintLine(FileCls, TAB(4), "'''<summary>")
     '        PrintLine(FileCls, TAB(4), "'''Obtiene o establece el contexto de la prueba que proporciona")
-    '        PrintLine(FileCls, TAB(4), "'''la información y funcionalidad para la ejecución de pruebas actual. ")
+    '        PrintLine(FileCls, TAB(4), "'''la informaciï¿½n y funcionalidad para la ejecuciï¿½n de pruebas actual. ")
     '        PrintLine(FileCls, TAB(4), "'''</summary>")
     '        PrintLine(FileCls, TAB(4), "Public Property TestContext() As TestContext")
     '        PrintLine(FileCls, TAB(8), "Get")
@@ -5490,22 +5490,22 @@ Public Class frmPrincipal
     '        PrintLine(FileCls, TAB(4), "'")
     '        PrintLine(FileCls, TAB(4), "'Puede utilizar los siguientes atributos adicionales mientras escribe sus pruebas: ")
     '        PrintLine(FileCls, TAB(4), "'")
-    '        PrintLine(FileCls, TAB(4), "'Use ClassInitialize para ejecutar código antes de ejecutar la primera prueba en la clase ")
+    '        PrintLine(FileCls, TAB(4), "'Use ClassInitialize para ejecutar cï¿½digo antes de ejecutar la primera prueba en la clase ")
     '        PrintLine(FileCls, TAB(4), "'<ClassInitialize()>  _")
     '        PrintLine(FileCls, TAB(4), "'Public Shared Sub MyClassInitialize(ByVal testContext As TestContext) ")
     '        PrintLine(FileCls, TAB(4), "'End Sub")
     '        PrintLine(FileCls, TAB(4), "'")
-    '        PrintLine(FileCls, TAB(4), "'Use ClassCleanup para ejecutar código después de haber ejecutado todas las pruebas en una clase")
+    '        PrintLine(FileCls, TAB(4), "'Use ClassCleanup para ejecutar cï¿½digo despuï¿½s de haber ejecutado todas las pruebas en una clase")
     '        PrintLine(FileCls, TAB(4), "'<ClassCleanup()>  _")
     '        PrintLine(FileCls, TAB(4), "'Public Shared Sub MyClassCleanup()")
     '        PrintLine(FileCls, TAB(4), "'End Sub")
     '        PrintLine(FileCls, TAB(4), "'")
-    '        PrintLine(FileCls, TAB(4), "'Use TestInitialize para ejecutar código antes de ejecutar cada prueba")
+    '        PrintLine(FileCls, TAB(4), "'Use TestInitialize para ejecutar cï¿½digo antes de ejecutar cada prueba")
     '        PrintLine(FileCls, TAB(4), "'<TestInitialize()>  _")
     '        PrintLine(FileCls, TAB(4), "'Public Sub MyTestInitialize()")
     '        PrintLine(FileCls, TAB(4), "'End Sub")
     '        PrintLine(FileCls, TAB(4), "'")
-    '        PrintLine(FileCls, TAB(4), "'Use TestCleanup para ejecutar código después de que se hayan ejecutado todas las pruebas")
+    '        PrintLine(FileCls, TAB(4), "'Use TestCleanup para ejecutar cï¿½digo despuï¿½s de que se hayan ejecutado todas las pruebas")
     '        PrintLine(FileCls, TAB(4), "'<TestCleanup()>  _")
     '        PrintLine(FileCls, TAB(4), "'Public Sub MyTestCleanup()")
     '        PrintLine(FileCls, TAB(4), "'End Sub")
@@ -5683,7 +5683,7 @@ Public Class frmPrincipal
     '        PrintLine(FileCls, TAB(4), "End Sub")
     '        PrintLine(FileCls, TAB(0), "End Class")
 
-    '        ' Cierro el PathCls de versión
+    '        ' Cierro el PathCls de versiï¿½n
     '        FileClose(FileCls)
     '    End If
 
@@ -5751,7 +5751,7 @@ Public Class frmPrincipal
     '                ' Creo el pie del get de la propiedad
     '                PrintLine(FileCls, TAB(9), "End Get")
 
-    '                ' Creo una línea divisoria (espacio en blanco)
+    '                ' Creo una lï¿½nea divisoria (espacio en blanco)
     '                '' PrintLine(FileCls, "")
 
     '                ' Creo la cabecera del set de la propiedad
@@ -5766,7 +5766,7 @@ Public Class frmPrincipal
     '                ' Creo el pie de la propiedad
     '                PrintLine(FileCls, TAB(5), "end property")
 
-    '                ' Creo una línea divisoria (espacio en blanco)
+    '                ' Creo una lï¿½nea divisoria (espacio en blanco)
     '                PrintLine(FileCls, "")
     '            End If
     '        Next
@@ -6079,7 +6079,7 @@ Public Class frmPrincipal
     '        PrintLine(FileCls, "")
 
     '        'consulta el archivo txt para importarlo
-    '        PrintLine(FileCls, TAB(5), "'importa los datos de una campaña desde el txt")
+    '        PrintLine(FileCls, TAB(5), "'importa los datos de una campaï¿½a desde el txt")
     '        PrintLine(FileCls, TAB(5), "Public Function Cargar_Archivo() As DataTable")
     '        PrintLine(FileCls, TAB(9), "Dim odt As New DataTable(" & """" & txtTabla.Text.Trim & """" & ")")
     '        PrintLine(FileCls, "")
@@ -6103,7 +6103,7 @@ Public Class frmPrincipal
     '        ' Comienzo a generar la clase
     '        PrintLine(FileCls, "End Class")
 
-    '        ' Cierro el PathCls de versión
+    '        ' Cierro el PathCls de versiï¿½n
     '        FileClose(FileCls)
 
     '    End If
@@ -6139,7 +6139,7 @@ Public Class frmPrincipal
     '    Dim FileInsert As Integer = FreeFile()
     '    Dim regInsert As regSistemaTabla
 
-    '    ' Abro un PathCls de texto (si el mismo existía se reempleza)
+    '    ' Abro un PathCls de texto (si el mismo existï¿½a se reempleza)
     '    FileOpen(FileInsert, PathInsert, OpenMode.Output)
     '    Dim Prefijo As String = "cop_"
 
@@ -6169,12 +6169,12 @@ Public Class frmPrincipal
     '            'If regInsert.indice = 9 Or regInsert.indice = 1 Then
     '            'PrintLine(FileInsert, TAB(5), "@" & regInsert.nombre & "    " & regInsert.tipo & "  output,")
     '            If Contador = NumeroFilas Then
-    '                PrintLine(FileInsert, TAB(5), "@" & regInsert.nombre & "    " & regInsert.tipo & "  " & regInsert.sptamaño)
+    '                PrintLine(FileInsert, TAB(5), "@" & regInsert.nombre & "    " & regInsert.tipo & "  " & regInsert.sptamanio)
     '            Else
     '                'If regInsert.nombre = "operacion" Or regInsert.nombre = "sincronizado" Then
     '                '    'no imprimo
     '                'Else
-    '                PrintLine(FileInsert, TAB(5), "@" & regInsert.nombre & "    " & regInsert.tipo & "  " & regInsert.sptamaño & ",")
+    '                PrintLine(FileInsert, TAB(5), "@" & regInsert.nombre & "    " & regInsert.tipo & "  " & regInsert.sptamanio & ",")
     '                'End If
     '            End If
     '            Contador = Contador + 1
@@ -6377,9 +6377,9 @@ Public Class frmPrincipal
     '                'no imprimir
     '            Else
     '                If Contador = NumeroFilas Then
-    '                    PrintLine(FileInsert, TAB(5), "@" & regInsert.nombre & "    " & regInsert.tipo & "  " & regInsert.sptamaño)
+    '                    PrintLine(FileInsert, TAB(5), "@" & regInsert.nombre & "    " & regInsert.tipo & "  " & regInsert.sptamanio)
     '                Else
-    '                    PrintLine(FileInsert, TAB(5), "@" & regInsert.nombre & "    " & regInsert.tipo & "  " & regInsert.sptamaño & ",")
+    '                    PrintLine(FileInsert, TAB(5), "@" & regInsert.nombre & "    " & regInsert.tipo & "  " & regInsert.sptamanio & ",")
     '                End If
     '            End If
     '            Contador = Contador + 1
@@ -6428,9 +6428,9 @@ Public Class frmPrincipal
     '            ElseIf regInsert.nombre = "operacion" Or regInsert.nombre = "sincronizado" Or regInsert.nombre = "id_cliente_maestro" Then
     '                'next row
     '            ElseIf Contador = NumeroFilas - 3 Then
-    '                PrintLine(FileInsert, TAB(5), "@" & regInsert.nombre & "    " & regInsert.tipo & "  " & regInsert.sptamaño)
+    '                PrintLine(FileInsert, TAB(5), "@" & regInsert.nombre & "    " & regInsert.tipo & "  " & regInsert.sptamanio)
     '            Else
-    '                PrintLine(FileInsert, TAB(5), "@" & regInsert.nombre & "    " & regInsert.tipo & "  " & regInsert.sptamaño & ",")
+    '                PrintLine(FileInsert, TAB(5), "@" & regInsert.nombre & "    " & regInsert.tipo & "  " & regInsert.sptamanio & ",")
     '            End If
     '            Contador = Contador + 1
     '        Next
@@ -6651,7 +6651,7 @@ Public Class frmPrincipal
     '    ' Defino variables
     '    Dim FileFrm As Integer = FreeFile()
 
-    '    ' Abro un PathCls de texto (si el mismo existía se reempleza)
+    '    ' Abro un PathCls de texto (si el mismo existï¿½a se reempleza)
     '    FileOpen(FileInsert, PathFrm, OpenMode.Output)
 
     '    'definicion de variables
@@ -6813,7 +6813,7 @@ Public Class frmPrincipal
     '    ' Defino variables
     '    FileFrm = FreeFile()
 
-    '    ' Abro un PathCls de texto (si el mismo existía se reempleza)
+    '    ' Abro un PathCls de texto (si el mismo existï¿½a se reempleza)
     '    FileOpen(FileInsert, PathFrm, OpenMode.Output)
 
     '    'definicion de variables
@@ -6830,12 +6830,12 @@ Public Class frmPrincipal
     '    PrintLine(FileFrm, TAB(8), "MyBase.Dispose(disposing)")
     '    PrintLine(FileFrm, TAB(4), "End Sub")
     '    PrintLine(FileFrm, "")
-    '    PrintLine(FileFrm, TAB(4), "'Requerido por el Diseñador de Windows Forms")
+    '    PrintLine(FileFrm, TAB(4), "'Requerido por el Diseï¿½ador de Windows Forms")
     '    PrintLine(FileFrm, TAB(4), "Private components As System.ComponentModel.IContainer")
     '    PrintLine(FileFrm, "")
-    '    PrintLine(FileFrm, TAB(4), "'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento")
-    '    PrintLine(FileFrm, TAB(4), "'Se puede modificar usando el Diseñador de Windows Forms.")
-    '    PrintLine(FileFrm, TAB(4), "'No lo modifique con el editor de código.")
+    '    PrintLine(FileFrm, TAB(4), "'NOTA: el Diseï¿½ador de Windows Forms necesita el siguiente procedimiento")
+    '    PrintLine(FileFrm, TAB(4), "'Se puede modificar usando el Diseï¿½ador de Windows Forms.")
+    '    PrintLine(FileFrm, TAB(4), "'No lo modifique con el editor de cï¿½digo.")
     '    PrintLine(FileFrm, TAB(4), "<System.Diagnostics.DebuggerStepThrough()> _")
     '    PrintLine(FileFrm, TAB(4), "Private Sub InitializeComponent()")
     '    PrintLine(FileFrm, TAB(8), "Me.components = New System.ComponentModel.Container")
@@ -7104,7 +7104,7 @@ Public Class frmPrincipal
     '    Dim FileFrmDetalle As Integer = FreeFile()
     '    Dim regDetalle As regSistemaTabla
 
-    '    ' Abro un PathCls de texto (si el mismo existía se reempleza)
+    '    ' Abro un PathCls de texto (si el mismo existï¿½a se reempleza)
     '    FileOpen(FileFrmDetalle, PathFrmdetalle, OpenMode.Output)
 
 
@@ -7402,7 +7402,7 @@ Public Class frmPrincipal
     '    PrintLine(FileFrmDetalle, TAB(20), "MessageBox.Show(" & """" & "Sr. Usuario: Los Datos que Pretende Ingresar ya Fueron Cargados en el Sistema" & """" & ")")
     '    PrintLine(FileFrmDetalle, TAB(16), "Exit Sub")
     '    PrintLine(FileFrmDetalle, TAB(16), "ElseIf Bandera" & Me.txtTabla.Text & " = 2 Then")
-    '    PrintLine(FileCls, TAB(20), "If MessageBox.Show(" & """" & "Sr. Usuario: Los Datos que Desea Modificar ya Existen ¿Desea Reemplazarlos?" & """" & ", " & """" & "MODIFICAR" & """" & ", _")
+    '    PrintLine(FileCls, TAB(20), "If MessageBox.Show(" & """" & "Sr. Usuario: Los Datos que Desea Modificar ya Existen ï¿½Desea Reemplazarlos?" & """" & ", " & """" & "MODIFICAR" & """" & ", _")
     '    PrintLine(FileCls, TAB(24), "MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) _")
     '    PrintLine(FileCls, TAB(24), "= Windows.Forms.DialogResult.No Then")
     '    PrintLine(FileCls, TAB(24), "Exit Sub")
@@ -7666,7 +7666,7 @@ Public Class frmPrincipal
 
     '        FileFrmDetalle = FreeFile()
 
-    '        ' Abro un PathCls de texto (si el mismo existía se reempleza)
+    '        ' Abro un PathCls de texto (si el mismo existï¿½a se reempleza)
     '        FileOpen(FileFrmDetalle, PathFrmdetalle, OpenMode.Output)
     '        PrintLine(FileFrmDetalle, TAB(0), "<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _")
     '        PrintLine(FileFrmDetalle, TAB(0), "Partial Class frmDetalle" & Me.txtTabla.Text)
@@ -7681,12 +7681,12 @@ Public Class frmPrincipal
     '        PrintLine(FileFrmDetalle, TAB(8), "MyBase.Dispose(disposing)")
     '        PrintLine(FileFrmDetalle, TAB(4), "End Sub")
     '        PrintLine(FileFrmDetalle, "")
-    '        PrintLine(FileFrmDetalle, TAB(4), "'Requerido por el Diseñador de Windows Forms")
+    '        PrintLine(FileFrmDetalle, TAB(4), "'Requerido por el Diseï¿½ador de Windows Forms")
     '        PrintLine(FileFrmDetalle, TAB(4), "Private components As System.ComponentModel.IContainer")
     '        PrintLine(FileFrmDetalle, "")
-    '        PrintLine(FileFrmDetalle, TAB(4), "'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento")
-    '        PrintLine(FileFrmDetalle, TAB(4), "'Se puede modificar usando el Diseñador de Windows Forms.")
-    '        PrintLine(FileFrmDetalle, TAB(4), "'No lo modifique con el editor de código.")
+    '        PrintLine(FileFrmDetalle, TAB(4), "'NOTA: el Diseï¿½ador de Windows Forms necesita el siguiente procedimiento")
+    '        PrintLine(FileFrmDetalle, TAB(4), "'Se puede modificar usando el Diseï¿½ador de Windows Forms.")
+    '        PrintLine(FileFrmDetalle, TAB(4), "'No lo modifique con el editor de cï¿½digo.")
     '        PrintLine(FileFrmDetalle, TAB(4), "<System.Diagnostics.DebuggerStepThrough()> _")
     '        PrintLine(FileFrmDetalle, TAB(4), "Private Sub InitializeComponent()")
     '        PrintLine(FileFrmDetalle, TAB(8), "Me.components = New System.ComponentModel.Container")
@@ -7813,7 +7813,7 @@ Public Class frmPrincipal
 
     '        FileFrmDetalle = FreeFile()
 
-    '        ' Abro un PathCls de texto (si el mismo existía se reempleza)
+    '        ' Abro un PathCls de texto (si el mismo existï¿½a se reempleza)
     '        FileOpen(FileFrmDetalle, PathFrmdetalle, OpenMode.Output)
 
     '        PrintLine(FileFrmDetalle, TAB(0), "<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _")
@@ -7829,12 +7829,12 @@ Public Class frmPrincipal
     '        PrintLine(FileFrmDetalle, TAB(8), "MyBase.Dispose(disposing)")
     '        PrintLine(FileFrmDetalle, TAB(4), "End Sub")
     '        PrintLine(FileFrmDetalle, "")
-    '        PrintLine(FileFrmDetalle, TAB(4), "'Requerido por el Diseñador de Windows Forms")
+    '        PrintLine(FileFrmDetalle, TAB(4), "'Requerido por el Diseï¿½ador de Windows Forms")
     '        PrintLine(FileFrmDetalle, TAB(4), "Private components As System.ComponentModel.IContainer")
     '        PrintLine(FileFrmDetalle, "")
-    '        PrintLine(FileFrmDetalle, TAB(4), "'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento")
-    '        PrintLine(FileFrmDetalle, TAB(4), "'Se puede modificar usando el Diseñador de Windows Forms.")
-    '        PrintLine(FileFrmDetalle, TAB(4), "'No lo modifique con el editor de código.")
+    '        PrintLine(FileFrmDetalle, TAB(4), "'NOTA: el Diseï¿½ador de Windows Forms necesita el siguiente procedimiento")
+    '        PrintLine(FileFrmDetalle, TAB(4), "'Se puede modificar usando el Diseï¿½ador de Windows Forms.")
+    '        PrintLine(FileFrmDetalle, TAB(4), "'No lo modifique con el editor de cï¿½digo.")
     '        PrintLine(FileFrmDetalle, TAB(4), "<System.Diagnostics.DebuggerStepThrough()> _")
     '        PrintLine(FileFrmDetalle, TAB(4), "Private Sub InitializeComponent()")
     '        PrintLine(FileFrmDetalle, TAB(8), "Me.components = New System.ComponentModel.Container")
@@ -7999,7 +7999,7 @@ Public Class frmPrincipal
 
 
 
-    '        '--------- formulario de detalle parte del diseño
+    '        '--------- formulario de detalle parte del diseï¿½o
 
     '        sContents = GetFileContents(Me.txtPath.Text & "\frmDetalleModelo2.resx", sErr)
     '        If sErr = "" Then
@@ -8016,7 +8016,7 @@ Public Class frmPrincipal
 
     '        FileFrmDetalle = FreeFile()
 
-    '        ' Abro un PathCls de texto (si el mismo existía se reempleza)
+    '        ' Abro un PathCls de texto (si el mismo existï¿½a se reempleza)
     '        FileOpen(FileFrmDetalle, PathFrmdetalle, OpenMode.Output)
 
     '        PrintLine(FileFrmDetalle, TAB(0), "<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _")
@@ -8032,12 +8032,12 @@ Public Class frmPrincipal
     '        PrintLine(FileFrmDetalle, TAB(8), "MyBase.Dispose(disposing)")
     '        PrintLine(FileFrmDetalle, TAB(4), "End Sub")
     '        PrintLine(FileFrmDetalle, "")
-    '        PrintLine(FileFrmDetalle, TAB(4), "'Requerido por el Diseñador de Windows Forms")
+    '        PrintLine(FileFrmDetalle, TAB(4), "'Requerido por el Diseï¿½ador de Windows Forms")
     '        PrintLine(FileFrmDetalle, TAB(4), "Private components As System.ComponentModel.IContainer")
     '        PrintLine(FileFrmDetalle, "")
-    '        PrintLine(FileFrmDetalle, TAB(4), "'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento")
-    '        PrintLine(FileFrmDetalle, TAB(4), "'Se puede modificar usando el Diseñador de Windows Forms.")
-    '        PrintLine(FileFrmDetalle, TAB(4), "'No lo modifique con el editor de código.")
+    '        PrintLine(FileFrmDetalle, TAB(4), "'NOTA: el Diseï¿½ador de Windows Forms necesita el siguiente procedimiento")
+    '        PrintLine(FileFrmDetalle, TAB(4), "'Se puede modificar usando el Diseï¿½ador de Windows Forms.")
+    '        PrintLine(FileFrmDetalle, TAB(4), "'No lo modifique con el editor de cï¿½digo.")
     '        PrintLine(FileFrmDetalle, TAB(4), "<System.Diagnostics.DebuggerStepThrough()> _")
     '        PrintLine(FileFrmDetalle, TAB(4), "Private Sub InitializeComponent()")
     '        PrintLine(FileFrmDetalle, TAB(8), "Me.components = New System.ComponentModel.Container")
@@ -8464,7 +8464,7 @@ Public Class frmPrincipal
 
         ' Verifico si se trata de una o todas las tablas
         If Not chkTodasLasTablas.Checked Then
-            ' Solicito confirmación antes de crear la clase
+            ' Solicito confirmaciï¿½n antes de crear la clase
             If MessageBox.Show("Desea Crear la Clase '" & txtClase.Text & "' Para la Tabla '" & txtTabla.Text & "' ?", "CONFIRMACION", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = Windows.Forms.DialogResult.Yes Then
                 ' Cargo la estructura de la tabla en un array "modular"
                 Call Cargar(txtCadena.Text, txtTabla.Text)
@@ -8476,7 +8476,7 @@ Public Class frmPrincipal
                 oClase.ClaseAgregada(Me.txtPath.Text, Me.txtTabla.Text)
 
                 ' Indico que se ha generado la clase
-                MessageBox.Show("Se Generó la Clase '" & txtClase.Text & "' en el Archivo '" & txtArchivo.Text & "' de la Tabla '" & txtTabla.Text & "'." & Chr(13) & Chr(13) & "El Archivo se Guardó en C:\." & Chr(13) & Chr(13) & "Copiar la Clase en el Proyecto y Agregarla con --> Agregar elemento existente", "GENERACION DE CLASES", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Se Generï¿½ la Clase '" & txtClase.Text & "' en el Archivo '" & txtArchivo.Text & "' de la Tabla '" & txtTabla.Text & "'." & Chr(13) & Chr(13) & "El Archivo se Guardï¿½ en C:\." & Chr(13) & Chr(13) & "Copiar la Clase en el Proyecto y Agregarla con --> Agregar elemento existente", "GENERACION DE CLASES", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 '  Me.btnSP2.Enabled = True
             End If
         Else
@@ -8487,7 +8487,7 @@ Public Class frmPrincipal
             Dim cbSistema As New SqlCommandBuilder(da)
             Dim dt As New DataTable
             da.Fill(dt)
-            ' Solicito confirmación antes de crear todas las tablas
+            ' Solicito confirmaciï¿½n antes de crear todas las tablas
             If MessageBox.Show("Desea las Clases Para Todas las Tablas de la Base de Datos Seleccionada ?", "CONFIRMACION", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) = Windows.Forms.DialogResult.Yes Then
                 Me.ProgressBar1.Value = Me.ProgressBar1.Minimum
                 Me.ProgressBar1.Maximum = dt.Rows.Count - 1
@@ -8508,7 +8508,7 @@ Public Class frmPrincipal
 
                     indice = indice + 1
                 Next
-                MessageBox.Show("Se Generó la Clase Para Todas las Tablas de la Base de Datos." & Chr(13) & Chr(13) & "Los Archivos se Guardaron en C:\." & Chr(13) & Chr(13) & "Copiar la Clase en el Proyecto y Agregarla con --> Agregar elemento existente", "GENERACION DE CLASES", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Se Generï¿½ la Clase Para Todas las Tablas de la Base de Datos." & Chr(13) & Chr(13) & "Los Archivos se Guardaron en C:\." & Chr(13) & Chr(13) & "Copiar la Clase en el Proyecto y Agregarla con --> Agregar elemento existente", "GENERACION DE CLASES", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 ' Me.btnTodoSP2.Enabled = True
             End If
         End If
@@ -8542,52 +8542,52 @@ Public Class frmPrincipal
     Private Sub btnAbrir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAbrir.Click
         Try
             With ofdScript
-                ' Vea btnRetriveFileNames_Click para obtener una explicación de los valores predeterminados
+                ' Vea btnRetriveFileNames_Click para obtener una explicaciï¿½n de los valores predeterminados
                 ' de las propiedades.
 
-                ' Comprobar que el archivo seleccionado existe. El cuadro de diálogo muestra
+                ' Comprobar que el archivo seleccionado existe. El cuadro de diï¿½logo muestra
                 ' una advertencia en caso contrario.
                 .CheckFileExists = True
 
-                ' Comprobar que la ruta de acceso seleccionada existe. El cuadro de diálogo muestra 
+                ' Comprobar que la ruta de acceso seleccionada existe. El cuadro de diï¿½logo muestra 
                 ' una advertencia en caso contrario.
                 .CheckPathExists = True
 
-                ' Obtener o establecer una extensión predeterminada. No incluye el "." inicial.
+                ' Obtener o establecer una extensiï¿½n predeterminada. No incluye el "." inicial.
                 .DefaultExt = "sql"
 
-                ' ¿Devolver el archivo al que hace referencia un vínculo? Si False, devuelve el archivo de vínculo
+                ' ï¿½Devolver el archivo al que hace referencia un vï¿½nculo? Si False, devuelve el archivo de vï¿½nculo
                 ' seleccionado. Si True, devuelve el archivo vinculado al archivo LNK.
                 .DereferenceLinks = True
 
                 ' Al igual que en VB6, utilice un conjunto de pares de filtros, separados por "|". Cada
-                ' par consta de una especificación descripción|archivo. Utilice "|" entre los pares. No es necesario
-                ' poner "|" al final. Puede establecer la propiedad FilterIndex también, para seleccionar el
-                ' filtro predeterminado. El primer filtro tiene el número 1 (no 0). El valor predeterminado es 1. 
+                ' par consta de una especificaciï¿½n descripciï¿½n|archivo. Utilice "|" entre los pares. No es necesario
+                ' poner "|" al final. Puede establecer la propiedad FilterIndex tambiï¿½n, para seleccionar el
+                ' filtro predeterminado. El primer filtro tiene el nï¿½mero 1 (no 0). El valor predeterminado es 1. 
                 .Filter = _
                 "Archivos SQL (*.sql)|*.sql" '|All files|*.*"
 
                 ' .Multiselect = False
 
-                ' ¿Restaurar el directorio original después de seleccionar
+                ' ï¿½Restaurar el directorio original despuï¿½s de seleccionar
                 ' un archivo? Si False, el directorio actual cambia
-                ' al directorio en el que seleccionó el archivo.
-                ' Establézcalo como True para poner la carpeta actual de nuevo
-                ' donde estaba cuando comenzó.
+                ' al directorio en el que seleccionï¿½ el archivo.
+                ' Establï¿½zcalo como True para poner la carpeta actual de nuevo
+                ' donde estaba cuando comenzï¿½.
                 ' El valor predeterminado es False.
                 .RestoreDirectory = True
 
-                ' ¿Mostrar el botón Ayuda y la casilla de verificación Sólo lectura?
+                ' ï¿½Mostrar el botï¿½n Ayuda y la casilla de verificaciï¿½n Sï¿½lo lectura?
                 .ShowHelp = True
                 .ShowReadOnly = False
 
-                ' ¿Comenzar con la casilla de verificación Sólo lectura activada?
-                ' Esto sólo tiene sentido si ShowReadOnly es True.
+                ' ï¿½Comenzar con la casilla de verificaciï¿½n Sï¿½lo lectura activada?
+                ' Esto sï¿½lo tiene sentido si ShowReadOnly es True.
                 .ReadOnlyChecked = False
 
                 .Title = "Select a file to open"
 
-                ' ¿Aceptar sólo nombres de archivo Win32 válidos?
+                ' ï¿½Aceptar sï¿½lo nombres de archivo Win32 vï¿½lidos?
                 .ValidateNames = True
 
                 If .ShowDialog = Windows.Forms.DialogResult.OK Then
@@ -8634,7 +8634,7 @@ Public Class frmPrincipal
         If BanderaSP = 0 Then
             MessageBox.Show("Los Comandos se Ejecutaron Correctamente", "MENSAJE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         Else
-            MessageBox.Show("Se ha Producido un Error en la Ejecución ", "MENSAJE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Se ha Producido un Error en la Ejecuciï¿½n ", "MENSAJE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         End If
 
     End Sub

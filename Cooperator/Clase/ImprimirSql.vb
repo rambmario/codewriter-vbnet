@@ -63,9 +63,9 @@ Public Class ImprimirSql
                 If reg.Orden = 1 Then
                     PrintLine(FileCls, TAB(5), "@" & reg.nombre & "    " & reg.tipo & "  output,")
                 ElseIf Contador = filas Then
-                    PrintLine(FileCls, TAB(5), "@" & reg.nombre & "    " & reg.tipo & "  " & reg.sptamaño)
+                    PrintLine(FileCls, TAB(5), "@" & reg.nombre & "    " & reg.tipo & "  " & reg.sptamanio)
                 Else
-                    PrintLine(FileCls, TAB(5), "@" & reg.nombre & "    " & reg.tipo & "  " & reg.sptamaño & ",")
+                    PrintLine(FileCls, TAB(5), "@" & reg.nombre & "    " & reg.tipo & "  " & reg.sptamanio & ",")
                 End If
                 Contador = Contador + 1
             Next
@@ -237,9 +237,9 @@ Public Class ImprimirSql
                 If reg.Orden = 1 Then
                     PrintLine(FileCls, TAB(5), "@" & reg.nombre & "    " & reg.tipo & "  output,")
                 ElseIf Contador = filas Then
-                    PrintLine(FileCls, TAB(5), "@" & reg.nombre & "    " & reg.tipo & "  " & reg.sptamaño)
+                    PrintLine(FileCls, TAB(5), "@" & reg.nombre & "    " & reg.tipo & "  " & reg.sptamanio)
                 Else
-                    PrintLine(FileCls, TAB(5), "@" & reg.nombre & "    " & reg.tipo & "  " & reg.sptamaño & ",")
+                    PrintLine(FileCls, TAB(5), "@" & reg.nombre & "    " & reg.tipo & "  " & reg.sptamanio & ",")
                 End If
                 Contador = Contador + 1
             Next
@@ -280,9 +280,9 @@ Public Class ImprimirSql
                 If reg.Orden = 1 Then
                     'PrintLine(FileCls, TAB(5), "@" & reg.nombre & "    " & reg.tipo & "  output,")
                 ElseIf Contador = filas Then
-                    PrintLine(FileCls, TAB(5), "@" & reg.nombre & "    " & reg.tipo & "  " & reg.sptamaño)
+                    PrintLine(FileCls, TAB(5), "@" & reg.nombre & "    " & reg.tipo & "  " & reg.sptamanio)
                 Else
-                    PrintLine(FileCls, TAB(5), "@" & reg.nombre & "    " & reg.tipo & "  " & reg.sptamaño & ",")
+                    PrintLine(FileCls, TAB(5), "@" & reg.nombre & "    " & reg.tipo & "  " & reg.sptamanio & ",")
                 End If
                 Contador = Contador + 1
             Next

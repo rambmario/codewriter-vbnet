@@ -52,7 +52,7 @@ Module Inicio
         Dim tiposql As String
         Dim valorinicial As Object
         Dim valorinsert As Object
-        Dim sptamaño As String
+        Dim sptamanio As String
         Dim tipopocket As String
         Dim LongitudPocket As String
         Dim Orden As String
